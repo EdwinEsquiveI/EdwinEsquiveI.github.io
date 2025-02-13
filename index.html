@@ -10,30 +10,54 @@
     <link href="https://fonts.cdnfonts.com/css/burbank-big-condensed" rel="stylesheet">
     <style>
         @import url('https://fonts.cdnfonts.com/css/burbank-big-condensed');
+        
         body {
             font-family: 'Burbank Big Condensed', sans-serif;
-            background: black;
+            background: url('fortnite1.jpg') repeat-y center center fixed;
+            background-size: cover;
             color: white;
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative;
+            animation: backgroundScroll 20s linear infinite;
         }
+
+        @keyframes backgroundScroll {
+            from { background-position: center 0; }
+            to { background-position: center 1000px; }
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        
         .container {
             max-width: 900px;
-            margin: auto;
-            background-color: rgba(0, 0, 0, 0.9);
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
-            border: 3px solid #00aaff;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
         }
+        
         h1, h2, h3 {
             text-transform: uppercase;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
         }
-        h1 { color: #00aaff; font-size: 48px; }
-        h2 { color: white; font-size: 32px; }
-        h3 { color: #00aaff; font-size: 26px; }
+        h1 { color: white; font-size: 50px; }
+        h2 { color: white; font-size: 34px; }
+        h3 { color: white; font-size: 28px; }
+        
         .button {
             display: block;
             width: 80%;
@@ -41,16 +65,38 @@
             padding: 15px 30px;
             font-size: 20px;
             color: white;
-            background: #00aaff;
+            background: rgba(0, 0, 0, 0.8);
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             text-decoration: none;
         }
         .button:hover {
             transform: scale(1.1);
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            background: rgba(50, 50, 50, 0.9);
+        }
+
+        .content {
+            text-align: left;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .content img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            color: white;
         }
     </style>
 </head>
@@ -59,7 +105,6 @@
         <h1>Fortnite Battle Royale</h1>
         <h2>¿Qué es Fortnite?</h2>
         <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie.</p>
-        <img src="fortnite1.jpg" width="100%" alt="Fortnite Battle Royale">
         <h2>Explora Más</h2>
         <a href="historia.html" class="button">Historia</a>
         <a href="skins.html" class="button">Skins</a>
@@ -67,5 +112,20 @@
         <a href="noticias.html" class="button">Noticias</a>
         <a href="foro.html" class="button">Foro</a>
     </div>
+    <div class="content">
+        <h2>Modos de Juego</h2>
+        <img src="modos.jpg" alt="Modos de Juego">
+        <p>Fortnite cuenta con diferentes modos de juego como Battle Royale, Creativo y Salvar el Mundo. Cada uno ofrece una experiencia única.</p>
+        <h2>Eventos en Vivo</h2>
+        <img src="eventos.jpg" alt="Eventos en Vivo">
+        <p>Epic Games organiza eventos en vivo dentro del juego que cambian la historia del mundo de Fortnite en tiempo real.</p>
+        <h2>Colaboraciones</h2>
+        <img src="colaboraciones.jpg" alt="Colaboraciones de Fortnite">
+        <p>Fortnite ha tenido colaboraciones con marcas y personajes famosos como Marvel, DC, Star Wars y más.</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Edwin Esquivel | Página temática de Fortnite | Todos los derechos reservados</p>
+    </div>
 </body>
 </html>
+
