@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Portafolio</title>
-<link rel="icon" type="image/x-icon" href="Fortnite.ico">
-<meta charset="utf-8">
-<meta name="Autor" content="Edwin Alberto Esquivel Gonzalez">
-<meta name="Fecha" content="10 de Febrero dw 2025">
-<meta name="Descripcion" content="Index">
+    <title>Fortnite Battle Royale | Unidad 1</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/6/64/Fortnite_Logo.png">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Edwin Esquivel">
+    <meta name="Fecha" content="11 de Febrero de 2025">
+    <meta name="Descripción" content="Página temática de Fortnite">
+    <link href="https://fonts.cdnfonts.com/css/burbank-big-condensed" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/burbank-big-condensed');
+        body {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            background: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+            border: 3px solid #00aaff;
+        }
+        h1, h2, h3 {
+            text-transform: uppercase;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+        h1 { color: #00aaff; font-size: 48px; }
+        h2 { color: white; font-size: 32px; }
+        h3 { color: #00aaff; font-size: 26px; }
+        .button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: #00aaff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
 <body>
-  <h1>Portafolio - Edwin Esquivel</h1>
+    <div class="container">
+        <h1>Fortnite Battle Royale</h1>
+        <h2>¿Qué es Fortnite?</h2>
+        <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie.</p>
+        <img src="https://cdn2.unrealengine.com/fortnite-chapter4-season2-key-art-1920x1080-df70fb8f6b39.jpg" width="100%" alt="Fortnite Battle Royale">
+        <h2>Explora Más</h2>
+        <a href="historia.html" class="button">Historia</a>
+        <a href="skins.html" class="button">Skins</a>
+        <a href="mecanicas.html" class="button">Mecánicas</a>
+        <a href="noticias.html" class="button">Noticias</a>
+        <a href="foro.html" class="button">Foro</a>
+    </div>
 </body>
 </html>
