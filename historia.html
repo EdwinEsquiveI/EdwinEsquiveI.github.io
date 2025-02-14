@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Historia de Fortnite | Capítulos y Temporadas</title>
+    <link rel="icon" type="image/png" href="fortnite.ico">
+    <meta charset="utf-8">
+    <meta name="Autor" content="Edwin Esquivel">
+    <meta name="Fecha" content="11 de Febrero de 2025">
+    <meta name="Descripción" content="Historia completa de Fortnite por capítulos y temporadas">
+    <link href="https://fonts.cdnfonts.com/css/burbank-big-condensed" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/burbank-big-condensed');
+        
+        body {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            background: url('fortnite1.jpg') repeat-y center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        
+        h1, h2 {
+            text-transform: uppercase;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+        }
+        
+        .button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.8);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            text-decoration: none;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            background: rgba(50, 50, 50, 0.9);
+        }
+
+        .history-section {
+            display: none;
+            text-align: left;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+        }
+    </style>
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Historia de Fortnite</h1>
+        <h2>Capítulos y Temporadas</h2>
+        <button class="button" onclick="toggleSection('capitulo1')">Capítulo 1</button>
+        <div id="capitulo1" class="history-section">
+            <h3>Temporada 1 - El Inicio</h3>
+            <p>Fortnite comenzó en 2017 con el modo Battle Royale...</p>
+            <h3>Temporada 2 - Caballeros y Secretos</h3>
+            <p>Se introdujo el primer pase de batalla con skins temáticas...</p>
+        </div>
+        
+        <button class="button" onclick="toggleSection('capitulo2')">Capítulo 2</button>
+        <div id="capitulo2" class="history-section">
+            <h3>Temporada 1 - Un Nuevo Mundo</h3>
+            <p>Se renovó el mapa y se añadieron mecánicas de pesca...</p>
+            <h3>Temporada 4 - Marvel Takeover</h3>
+            <p>Colaboración con Marvel que incluyó personajes icónicos...</p>
+        </div>
+        
+        <button class="button" onclick="toggleSection('capitulo3')">Capítulo 3</button>
+        <div id="capitulo3" class="history-section">
+            <h3>Temporada 1 - Volteando el Juego</h3>
+            <p>El mapa se dio vuelta por completo, trayendo una nueva era...</p>
+            <h3>Temporada 3 - Vibin'</h3>
+            <p>Un verano lleno de fiestas, con colaboraciones importantes...</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Edwin Esquivel | Historia de Fortnite | Todos los derechos reservados</p>
+    </div>
+</body>
+</html>
