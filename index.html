@@ -72,6 +72,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            background-image: url('fortnite1.jpg'); /* Aquí se agrega la ruta del banner */
+            background-size: cover;
+            background-position: center;
             z-index: 2; /* Aseguramos que el banner quede encima del video */
         }
 
@@ -82,18 +85,6 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 15px 30px;
             border-radius: 10px;
-        }
-
-        /* VIDEO DE FONDO (solo de "Modos de Juego" hacia abajo) */
-        .video-background {
-            position: absolute;
-            top: 500px; /* Comienza después del banner */
-            left: 0;
-            width: 100%;
-            height: auto;
-            min-height: 100vh; /* Aseguramos que ocupe el fondo desde "Modos de Juego" hacia abajo */
-            object-fit: cover;
-            z-index: -1; /* El video está detrás del contenido */
         }
 
         /* SECCIÓN "¿Qué es Fortnite?" */
@@ -184,12 +175,27 @@
             display: block;
         }
 
+        /* FOOTER */
         .footer {
             background: rgba(0, 0, 0, 0.9);
             padding: 20px;
             text-align: center;
             margin-top: 40px;
         }
+
+        /* VIDEO DE FONDO (solo de "Modos de Juego" hacia abajo) */
+        .video-background {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            min-height: 100vh; /* Aseguramos que ocupe el fondo desde "Modos de Juego" hacia abajo */
+            object-fit: cover;
+            z-index: -1; /* El video está detrás del contenido */
+            margin-top: 40px; /* Espacio entre las secciones */
+        }
+
     </style>
 </head>
 <body>
@@ -270,6 +276,7 @@
 
 </body>
 </html>
+
 
 
 
