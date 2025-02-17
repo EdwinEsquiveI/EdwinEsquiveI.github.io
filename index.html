@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <title>Fortnite Battle Royale | Unidad 1</title>
-    <link rel="icon" type="image/png" href="Fortnite.ico">
+    <link rel="icon" type="image/png" href="fortnite.png">
     <meta charset="utf-8">
     <meta name="Autor" content="Edwin Esquivel">
     <meta name="Fecha" content="11 de Febrero de 2025">
@@ -24,6 +24,7 @@
             color: white;
             text-align: center;
             position: relative;
+            overflow-x: hidden;
         }
 
         body::before {
@@ -54,22 +55,34 @@
 
         .container {
             max-width: 900px;
-            margin: 100px auto 50px;
+            margin: 120px auto 50px;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
         }
         
         h2, h3 {
             text-transform: uppercase;
             text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
         }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
         
         .button {
             display: inline-block;
-            width: 200px;
-            margin: 10px;
+            width: 180px;
             padding: 15px;
             font-size: 20px;
             color: white;
@@ -77,8 +90,25 @@
             border: 2px solid white;
             border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s;
             text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.4s;
+        }
+
+        .button:hover::before {
+            left: 100%;
         }
 
         .button:hover {
@@ -90,18 +120,19 @@
         .content {
             text-align: center;
             padding: 20px;
+            margin-top: 40px;
         }
 
         .content img {
-            width: 60%;
-            max-width: 400px;
+            width: 50%;
+            max-width: 350px;
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s;
+            transition: transform 0.3s ease-in-out;
         }
 
         .content img:hover {
-            transform: scale(1.1);
+            transform: rotateY(10deg) scale(1.05);
         }
 
         .footer {
@@ -119,11 +150,13 @@
     <div class="container">
         <h2>¿Qué es Fortnite?</h2>
         <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie. Se destaca por sus gráficos vibrantes, eventos en vivo y colaboraciones épicas.</p>
-        <a href="historia.html" class="button">Historia</a>
-        <a href="skins.html" class="button">Skins</a>
-        <a href="mecanicas.html" class="button">Mecánicas</a>
-        <a href="noticias.html" class="button">Noticias</a>
-        <a href="foro.html" class="button">Foro</a>
+        <div class="button-container">
+            <a href="historia.html" class="button">Historia</a>
+            <a href="skins.html" class="button">Skins</a>
+            <a href="mecanicas.html" class="button">Mecánicas</a>
+            <a href="noticias.html" class="button">Noticias</a>
+            <a href="foro.html" class="button">Foro</a>
+        </div>
     </div>
     <div class="content">
         <h2>Modos de Juego</h2>
@@ -141,5 +174,4 @@
     </div>
 </body>
 </html>
-
 
