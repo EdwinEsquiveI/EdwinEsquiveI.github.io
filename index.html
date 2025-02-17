@@ -82,12 +82,13 @@
             border-radius: 10px;
         }
 
+        /* Cambié esta parte */
         .video-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh; /* Aseguramos que ocupe toda la altura de la pantalla */
             object-fit: cover;
             z-index: -1;
         }
@@ -187,7 +188,7 @@
 
     <!-- VIDEO DE FONDO -->
     <video autoplay muted loop class="video-background">
-        <source src="fortnite-gameplay.webm" type="video/mp4">
+        <source src="fortnite-gameplay.webm" type="video/webm">
     </video>
 
     <!-- HEADER -->
@@ -212,18 +213,18 @@
         <h2>¿Qué es Fortnite?</h2>
         <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie. Se destaca por sus gráficos vibrantes, eventos en vivo y colaboraciones épicas.</p>
         <div class="buttons">
-            <a href="historia.html" class="button" onclick="playSound()">Historia</a>
-            <a href="skins.html" class="button" onclick="playSound()">Skins</a>
-            <a href="mecanicas.html" class="button" onclick="playSound()">Mecánicas</a>
-            <a href="noticias.html" class="button" onclick="playSound()">Noticias</a>
-            <a href="foro.html" class="button" onclick="playSound()">Foro</a>
+            <a href="historia.html" class="button" onclick="playSound(event)">Historia</a>
+            <a href="skins.html" class="button" onclick="playSound(event)">Skins</a>
+            <a href="mecanicas.html" class="button" onclick="playSound(event)">Mecánicas</a>
+            <a href="noticias.html" class="button" onclick="playSound(event)">Noticias</a>
+            <a href="foro.html" class="button" onclick="playSound(event)">Foro</a>
         </div>
     </div>
 
     <!-- SECCIÓN INTERACTIVA -->
     <div class="content">
         <div class="content-box" onclick="toggleContent(this)">
-            <img src="modos.jpeg" alt="Modos de Juego">
+            <img src="modo.jpeg" alt="Modos de Juego">
             <p>Fortnite cuenta con diferentes modos de juego como Battle Royale, Creativo y Salvar el Mundo.</p>
         </div>
         <div class="content-box" onclick="toggleContent(this)">
@@ -244,9 +245,10 @@
 
     <script>
         // Función para reproducir sonido al presionar los botones
-        function playSound() {
+        function playSound(event) {
             var sound = document.getElementById("click-sound");
             sound.play();
+            event.preventDefault(); // Prevenir comportamiento por defecto si es necesario
         }
 
         // Función para activar la sección de contenido
@@ -261,6 +263,7 @@
 
 </body>
 </html>
+
 
 
 
