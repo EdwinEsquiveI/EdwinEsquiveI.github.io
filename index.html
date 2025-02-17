@@ -22,7 +22,7 @@
             color: white;
             text-align: center;
             overflow-x: hidden;
-            height: 100vh; /* Aseguramos que la página ocupe toda la pantalla */
+            height: 100vh;
             position: relative;
         }
 
@@ -71,7 +71,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            z-index: 1;
+            z-index: 2; /* Aseguramos que el banner quede encima del video */
         }
 
         .banner h2 {
@@ -83,15 +83,14 @@
             border-radius: 10px;
         }
 
-        /* Ajustamos el video de fondo */
         .video-background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%; /* Aseguramos que ocupe toda la pantalla */
-            object-fit: cover; /* Esto mantiene la proporción sin deformar */
-            z-index: -1;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* El video sigue atrás */
         }
 
         .container {
@@ -104,7 +103,7 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-in-out;
-            z-index: 2; /* Aseguramos que esté por encima del video */
+            z-index: 2;
         }
 
         .container.visible {
@@ -250,7 +249,7 @@
         function playSound(event) {
             var sound = document.getElementById("click-sound");
             sound.play();
-            event.preventDefault(); // Prevenir comportamiento por defecto si es necesario
+            event.preventDefault();
         }
 
         // Función para activar la sección de contenido
@@ -265,6 +264,8 @@
 
 </body>
 </html>
+
+
 
 
 
