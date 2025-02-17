@@ -38,7 +38,6 @@
             background: rgba(0, 0, 0, 0.8);
             padding: 15px 50px;
             z-index: 1000;
-            transition: background-color 0.3s ease-in-out;
         }
 
         .header h1 {
@@ -46,11 +45,6 @@
             font-weight: bold;
             color: #fff;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .header h1:hover {
-            transform: scale(1.1);
         }
 
         .nav-links {
@@ -85,7 +79,6 @@
             background-image: url('fortnite1.jpg');
             background-size: cover;
             background-position: center;
-            z-index: 2;
         }
 
         .banner h2 {
@@ -105,7 +98,7 @@
 
         /* SECCIÓN "¿Qué es Fortnite?" */
         .container {
-            background-color: #0e0e0e; /* Fondo negro sólido */
+            background-color: #0e0e0e; 
             max-width: 1100px;
             margin: 50px auto;
             padding: 40px;
@@ -114,8 +107,6 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-in-out;
-            position: relative;
-            z-index: 10; /* Asegura que esté por encima del video */
         }
 
         .container.visible {
@@ -160,8 +151,6 @@
             border-radius: 10px;
             text-decoration: none;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            letter-spacing: 1px;
         }
 
         .button:hover {
@@ -173,13 +162,13 @@
 
         /* CONTENEDOR DEL VIDEO DE FONDO */
         .video-container {
-            position: absolute; /* Asegura que el video esté en el fondo */
+            position: absolute; 
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh; /* Asegura que el video ocupe toda la pantalla */
+            height: 100vh; 
             overflow: hidden;
-            z-index: -1; /* Coloca el video detrás de las secciones */
+            z-index: -1; 
         }
 
         .video-background {
@@ -188,7 +177,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+            object-fit: cover; 
         }
 
         /* SECCIÓN INTERACTIVA */
@@ -199,8 +188,8 @@
             gap: 40px;
             padding: 30px;
             position: relative;
-            z-index: 10; /* Asegura que esté por encima del video */
-            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            z-index: 10; 
+            background: rgba(0, 0, 0, 0.7); 
         }
 
         .content-box {
@@ -271,7 +260,7 @@
             font-size: 18px;
             color: #ffcc00;
             position: relative;
-            z-index: 10; /* Asegura que esté por encima del video */
+            z-index: 10;
         }
     </style>
 </head>
@@ -299,11 +288,11 @@
         <h2>¿Qué es Fortnite?</h2>
         <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie. Se destaca por sus gráficos vibrantes, eventos en vivo y colaboraciones épicas.</p>
         <div class="buttons">
-            <a href="historia.html" class="button" onclick="playSound()">Historia</a>
-            <a href="skins.html" class="button" onclick="playSound()">Skins</a>
-            <a href="mecanicas.html" class="button" onclick="playSound()">Mecánicas</a>
-            <a href="noticias.html" class="button" onclick="playSound()">Noticias</a>
-            <a href="foro.html" class="button" onclick="playSound()">Foro</a>
+            <a href="historia.html" class="button">Historia</a>
+            <a href="skins.html" class="button">Skins</a>
+            <a href="mecanicas.html" class="button">Mecánicas</a>
+            <a href="noticias.html" class="button">Noticias</a>
+            <a href="foro.html" class="button">Foro</a>
         </div>
     </div>
 
@@ -328,13 +317,13 @@
 
     <!-- SECCIÓN DE ARMAS -->
     <div class="weapons-section">
-        <div class="weapon-box" onclick="playWeaponSound('arma1')">
+        <div class="weapon-box">
             <img src="arma1.jpg" alt="Arma 1">
         </div>
-        <div class="weapon-box" onclick="playWeaponSound('arma2')">
+        <div class="weapon-box">
             <img src="arma2.jpg" alt="Arma 2">
         </div>
-        <div class="weapon-box" onclick="playWeaponSound('arma3')">
+        <div class="weapon-box">
             <img src="arma3.jpg" alt="Arma 3">
         </div>
     </div>
@@ -344,38 +333,13 @@
         <p>&copy; 2025 Edwin Esquivel | Página temática de Fortnite</p>
     </div>
 
-    <!-- Reproductor de sonido -->
-    <audio id="click-sound">
-        <source src="click-sound.mp3" type="audio/mp3">
-    </audio>
-    <audio id="arma1">
-        <source src="arma1-sound.mp3" type="audio/mp3">
-    </audio>
-    <audio id="arma2">
-        <source src="arma2-sound.mp3" type="audio/mp3">
-    </audio>
-    <audio id="arma3">
-        <source src="arma3-sound.mp3" type="audio/mp3">
-    </audio>
-
     <script>
-        // Función para reproducir sonido al presionar los botones
-        function playSound() {
-            var sound = document.getElementById("click-sound");
-            sound.play();
-        }
-
-        // Función para reproducir sonido de armas
-        function playWeaponSound(weapon) {
-            var sound = document.getElementById(weapon);
-            sound.play();
-        }
-
         // Función para activar la sección de contenido
         function toggleContent(element) {
             element.classList.toggle("active");
         }
 
+        // Mostrar la sección "¿Qué es Fortnite?" al hacer scroll
         document.addEventListener("scroll", function () {
             document.querySelector(".container").classList.add("visible");
         });
