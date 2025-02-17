@@ -193,17 +193,12 @@
             min-height: 100vh; /* Aseguramos que ocupe el fondo desde "Modos de Juego" hacia abajo */
             object-fit: cover;
             z-index: -1; /* El video está detrás del contenido */
-            margin-top: 40px; /* Espacio entre las secciones */
+            margin-top: 150px; /* Espacio entre las secciones para que no cubra el banner y el texto de "¿Qué es Fortnite?" */
         }
 
     </style>
 </head>
 <body>
-
-    <!-- VIDEO DE FONDO -->
-    <video autoplay muted loop class="video-background">
-        <source src="fortnite-gameplay.webm" type="video/webm">
-    </video>
 
     <!-- HEADER -->
     <div class="header">
@@ -238,7 +233,7 @@
     <!-- SECCIÓN INTERACTIVA -->
     <div class="content">
         <div class="content-box" onclick="toggleContent(this)">
-            <img src="modos.jpeg" alt="Modos de Juego">
+            <img src="modo.jpeg" alt="Modos de Juego">
             <p>Fortnite cuenta con diferentes modos de juego como Battle Royale, Creativo y Salvar el Mundo.</p>
         </div>
         <div class="content-box" onclick="toggleContent(this)">
@@ -246,6 +241,11 @@
             <p>Epic Games organiza eventos en vivo que cambian la historia del juego en tiempo real.</p>
         </div>
     </div>
+
+    <!-- VIDEO DE FONDO (aparece solo después de la sección "Modos de Juego") -->
+    <video autoplay muted loop class="video-background">
+        <source src="fortnite-gameplay.webm" type="video/webm">
+    </video>
 
     <!-- FOOTER -->
     <div class="footer">
@@ -276,7 +276,6 @@
 
 </body>
 </html>
-
 
 
 
