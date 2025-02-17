@@ -120,14 +120,16 @@
         }
 
         .container h2 {
-            font-size: 35px;
+            font-size: 45px;
             margin-bottom: 20px;
             color: #ffcc00;
+            font-family: 'Burbank Big Condensed', sans-serif;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
         }
 
         .container p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 20px;
+            line-height: 1.8;
             margin-bottom: 20px;
             color: white;
             font-weight: 300;
@@ -205,17 +207,15 @@
             display: block;
         }
 
-        /* VIDEO DE FONDO (solo de "Modos de Juego" hacia abajo) */
+        /* VIDEO DE FONDO (estará a partir de "Modos de Juego") */
         .video-background {
-            position: relative;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: auto;
-            min-height: 100vh; /* Aseguramos que ocupe el fondo desde "Modos de Juego" hacia abajo */
+            height: 100vh;
             object-fit: cover;
             z-index: -1;
-            margin-top: 150px; /* Ajustamos para que se vea después de "Modos de Juego" */
         }
 
         /* FOOTER */
@@ -247,6 +247,11 @@
         <h2>Bienvenido a Fortnite</h2>
     </div>
 
+    <!-- VIDEO DE FONDO (aparece desde "Modos de Juego") -->
+    <video autoplay muted loop class="video-background">
+        <source src="fortnite-gameplay.webm" type="video/webm">
+    </video>
+
     <!-- SECCIÓN "¿Qué es Fortnite?" -->
     <div class="container">
         <h2>¿Qué es Fortnite?</h2>
@@ -271,11 +276,6 @@
             <p>Epic Games organiza eventos en vivo que cambian la historia del juego en tiempo real.</p>
         </div>
     </div>
-
-    <!-- VIDEO DE FONDO (aparece solo después de la sección "Modos de Juego") -->
-    <video autoplay muted loop class="video-background">
-        <source src="fortnite-gameplay.webm" type="video/webm">
-    </video>
 
     <!-- FOOTER -->
     <div class="footer">
@@ -306,8 +306,6 @@
 
 </body>
 </html>
-
-
 
 
 
