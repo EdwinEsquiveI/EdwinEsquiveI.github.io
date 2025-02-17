@@ -33,20 +33,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.8);
             padding: 15px 50px;
             z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .header h1 {
             font-size: 40px;
             font-weight: bold;
             color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header h1:hover {
+            transform: scale(1.1);
         }
 
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         .nav-links a {
@@ -61,6 +68,7 @@
         .nav-links a:hover {
             background: #ffcc00;
             color: black;
+            transform: scale(1.1);
         }
 
         /* BANNER */
@@ -72,10 +80,10 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-image: url('fortnite1.jpg'); /* Aquí se agrega la ruta del banner */
+            background-image: url('fortnite1.jpg');
             background-size: cover;
             background-position: center;
-            z-index: 2; /* Aseguramos que el banner quede encima del video */
+            z-index: 2;
         }
 
         .banner h2 {
@@ -85,11 +93,17 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 15px 30px;
             border-radius: 10px;
+            animation: bannerAnimation 2s ease-in-out;
+        }
+
+        @keyframes bannerAnimation {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
 
         /* SECCIÓN "¿Qué es Fortnite?" */
         .container {
-            background-color: black;
+            background-color: #1a1a1a;
             max-width: 1100px;
             margin: 50px auto;
             padding: 30px;
@@ -105,7 +119,21 @@
             transform: translateY(0);
         }
 
-        /* BOTONES */
+        .container h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 300;
+        }
+
+        /* SECCIÓN BOTONES */
         .buttons {
             display: flex;
             justify-content: center;
@@ -125,12 +153,14 @@
             border-radius: 10px;
             text-decoration: none;
             transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
         .button:hover {
             background: white;
             color: black;
             transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
         }
 
         /* SECCIÓN INTERACTIVA */
@@ -175,14 +205,6 @@
             display: block;
         }
 
-        /* FOOTER */
-        .footer {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
         /* VIDEO DE FONDO (solo de "Modos de Juego" hacia abajo) */
         .video-background {
             position: relative;
@@ -192,10 +214,18 @@
             height: auto;
             min-height: 100vh; /* Aseguramos que ocupe el fondo desde "Modos de Juego" hacia abajo */
             object-fit: cover;
-            z-index: -1; /* El video está detrás del contenido */
-            margin-top: 150px; /* Espacio entre las secciones para que no cubra el banner y el texto de "¿Qué es Fortnite?" */
+            z-index: -1;
+            margin-top: 150px; /* Ajustamos para que se vea después de "Modos de Juego" */
         }
 
+        /* FOOTER */
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
     </style>
 </head>
 <body>
