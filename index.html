@@ -19,66 +19,88 @@
         
         body {
             font-family: 'Burbank Big Condensed', sans-serif;
-            background: #111;
+            background: url('fortnite1.jpg') center center fixed;
+            background-size: cover;
             color: white;
             text-align: center;
+            position: relative;
         }
 
-        /* HEADER */
         .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
-            background: rgba(0, 0, 0, 0.9);
-            position: fixed;
-            width: 100%;
-            top: 0;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1000;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
         }
 
         .header img {
             height: 50px;
         }
 
-        .nav-links a {
-            margin: 0 15px;
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-buttons a {
             color: white;
             text-decoration: none;
-            font-size: 20px;
-            transition: 0.3s;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: black;
+            transition: all 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #ffcc00;
+        .nav-buttons a:hover {
+            background: white;
+            color: black;
         }
 
-        /* BANNER */
         .banner {
-            background: url('fortnite1.jpg') no-repeat center center/cover;
-            height: 80vh;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('banner.jpg') no-repeat center center;
+            background-size: cover;
             display: flex;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            font-size: 50px;
-            font-weight: bold;
-            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
-            color: white;
+            justify-content: center;
         }
 
-        /* CONTENEDOR PRINCIPAL */
+        .banner h1 {
+            font-size: 50px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 30px;
+            border-radius: 10px;
+        }
+
         .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        h2, h3 {
+            text-transform: uppercase;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
         }
         
         .button {
             display: inline-block;
             width: 220px;
             margin: 15px;
-            padding: 20px;
+            padding: 15px;
             font-size: 22px;
             color: white;
             background: black;
@@ -95,44 +117,42 @@
             transform: scale(1.1);
         }
 
-        /* IMÁGENES INTERACTIVAS */
-        .image-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: auto;
-            overflow: hidden;
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .content-item {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .content-item img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s;
             cursor: pointer;
         }
 
-        .image-container img {
-            width: 100%;
-            transition: 0.3s;
-        }
-
-        .image-container:hover img {
+        .content-item img:hover {
             transform: scale(1.1);
         }
 
-        .image-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 15px;
-            font-size: 18px;
+        .content-item p {
             display: none;
+            margin-top: 10px;
         }
 
-        .image-container:hover .image-text {
+        .content-item img:active + p {
             display: block;
         }
 
-        /* FOOTER */
         .footer {
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
@@ -143,43 +163,37 @@
 </head>
 <body>
     <div class="header">
-        <img src="Fortnite.ico" alt="Fortnite">
-        <div class="nav-links">
-            <a href="#historia">Historia</a>
-            <a href="#skins">Skins</a>
-            <a href="#mecanicas">Mecánicas</a>
-            <a href="#noticias">Noticias</a>
-            <a href="#foro">Foro</a>
+        <img src="fortnite-logo.png" alt="Fortnite">
+        <div class="nav-buttons">
+            <a href="#">Inicio</a>
+            <a href="#">Historia</a>
+            <a href="#">Skins</a>
+            <a href="#">Mecánicas</a>
+            <a href="#">Noticias</a>
         </div>
     </div>
-
-    <div class="banner">¡Bienvenido a Fortnite!</div>
-    
+    <div class="banner">
+        <h1>Bienvenido a Fortnite Battle Royale</h1>
+    </div>
     <div class="container">
         <h2>¿Qué es Fortnite?</h2>
         <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie. Se destaca por sus gráficos vibrantes, eventos en vivo y colaboraciones épicas.</p>
-        <a href="historia.html" class="button">Historia</a>
-        <a href="skins.html" class="button">Skins</a>
-        <a href="mecanicas.html" class="button">Mecánicas</a>
-        <a href="noticias.html" class="button">Noticias</a>
-        <a href="foro.html" class="button">Foro</a>
+        <a href="#" class="button">Explorar Más</a>
     </div>
-
-    <div class="image-container">
-        <img src="modos.jpg" alt="Modos de Juego">
-        <div class="image-text">Explora los modos de juego únicos de Fortnite.</div>
+    <div class="content">
+        <div class="content-item">
+            <img src="modos.jpg" alt="Modos de Juego">
+            <p>Fortnite cuenta con diferentes modos de juego como Battle Royale, Creativo y Salvar el Mundo.</p>
+        </div>
+        <div class="content-item">
+            <img src="eventos.jpg" alt="Eventos en Vivo">
+            <p>Epic Games organiza eventos en vivo dentro del juego que cambian la historia del mundo de Fortnite en tiempo real.</p>
+        </div>
+        <div class="content-item">
+            <img src="colabs.jfif" alt="Colaboraciones">
+            <p>Fortnite ha tenido colaboraciones con Marvel, DC, Star Wars y más, con skins y eventos temáticos.</p>
+        </div>
     </div>
-    
-    <div class="image-container">
-        <img src="eventos.jpg" alt="Eventos en Vivo">
-        <div class="image-text">Eventos en vivo que redefinen el juego.</div>
-    </div>
-    
-    <div class="image-container">
-        <img src="colabs.jfif" alt="Colaboraciones de Fortnite">
-        <div class="image-text">Colaboraciones con grandes franquicias.</div>
-    </div>
-
     <div class="footer">
         <p>&copy; 2025 Edwin Esquivel | Página temática de Fortnite | Todos los derechos reservados</p>
     </div>
