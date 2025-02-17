@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <title>Fortnite Battle Royale</title>
+    <link rel="icon" type="image/png" href="Fortnite.ico">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Autor" content="Edwin Esquivel">
     <meta name="Descripción" content="Página temática de Fortnite">
-    <title>Fortnite Battle Royale</title>
-    <link rel="icon" type="image/png" href="Fortnite.ico">
     
-    <!-- Fuente -->
+    <!-- Cargar la fuente Burbank Big Condensed desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -38,6 +38,7 @@
             background: rgba(0, 0, 0, 0.8);
             padding: 15px 50px;
             z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .header h1 {
@@ -45,6 +46,11 @@
             font-weight: bold;
             color: #fff;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header h1:hover {
+            transform: scale(1.1);
         }
 
         .nav-links {
@@ -79,6 +85,7 @@
             background-image: url('fortnite1.jpg');
             background-size: cover;
             background-position: center;
+            z-index: 2;
         }
 
         .banner h2 {
@@ -98,7 +105,7 @@
 
         /* SECCIÓN "¿Qué es Fortnite?" */
         .container {
-            background-color: #0e0e0e; 
+            background-color: #0e0e0e; /* Fondo negro sólido */
             max-width: 1100px;
             margin: 50px auto;
             padding: 40px;
@@ -107,6 +114,8 @@
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-in-out;
+            position: relative;
+            z-index: 10; /* Asegura que esté por encima del video */
         }
 
         .container.visible {
@@ -151,6 +160,8 @@
             border-radius: 10px;
             text-decoration: none;
             transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            letter-spacing: 1px;
         }
 
         .button:hover {
@@ -160,14 +171,13 @@
             box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
         }
 
-        /* VIDEO DE FONDO */
+        /* CONTENEDOR DEL VIDEO DE FONDO */
         .video-container {
-            position: absolute; 
-            top: 0;
-            left: 0;
+            position: relative;
             width: 100%;
-            height: 100vh; 
-            z-index: -1; 
+            height: 100vh; /* Asegura que el video ocupe toda la pantalla */
+            overflow: hidden;
+            z-index: 1; /* Coloca el video detrás de las secciones */
         }
 
         .video-background {
@@ -176,10 +186,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Mantiene el video completo */
+            object-fit: cover;
+            z-index: -1;
         }
 
-        /* INTERACTIVOS */
+        /* SECCIÓN INTERACTIVA */
         .content {
             display: flex;
             flex-direction: column;
@@ -187,8 +198,8 @@
             gap: 40px;
             padding: 30px;
             position: relative;
-            z-index: 10;
-            background: rgba(0, 0, 0, 0.7);
+            z-index: 10; /* Asegura que esté por encima del video */
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
         }
 
         .content-box {
@@ -224,32 +235,6 @@
             display: block;
         }
 
-        /* Sección de armas */
-        .weapons-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .weapon-box {
-            width: 150px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .weapon-box img {
-            width: 100%;
-            max-width: 120px;
-            border-radius: 10px;
-        }
-
-        .weapon-box:hover {
-            transform: scale(1.1);
-        }
-
         /* FOOTER */
         .footer {
             background: rgba(0, 0, 0, 0.9);
@@ -259,7 +244,7 @@
             font-size: 18px;
             color: #ffcc00;
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Asegura que esté por encima del video */
         }
     </style>
 </head>
@@ -287,15 +272,15 @@
         <h2>¿Qué es Fortnite?</h2>
         <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie. Se destaca por sus gráficos vibrantes, eventos en vivo y colaboraciones épicas.</p>
         <div class="buttons">
-            <a href="historia.html" class="button">Historia</a>
-            <a href="skins.html" class="button">Skins</a>
-            <a href="mecanicas.html" class="button">Mecánicas</a>
-            <a href="noticias.html" class="button">Noticias</a>
-            <a href="foro.html" class="button">Foro</a>
+            <a href="historia.html" class="button" onclick="playSound()">Historia</a>
+            <a href="skins.html" class="button" onclick="playSound()">Skins</a>
+            <a href="mecanicas.html" class="button" onclick="playSound()">Mecánicas</a>
+            <a href="noticias.html" class="button" onclick="playSound()">Noticias</a>
+            <a href="foro.html" class="button" onclick="playSound()">Foro</a>
         </div>
     </div>
 
-    <!-- VIDEO DE FONDO -->
+    <!-- CONTENEDOR DEL VIDEO DE FONDO -->
     <div class="video-container">
         <video autoplay muted loop class="video-background">
             <source src="fortnite-gameplay.webm" type="video/webm">
@@ -314,31 +299,28 @@
         </div>
     </div>
 
-    <!-- SECCIÓN DE ARMAS -->
-    <div class="weapons-section">
-        <div class="weapon-box">
-            <img src="arma1.jpg" alt="Arma 1">
-        </div>
-        <div class="weapon-box">
-            <img src="arma2.jpg" alt="Arma 2">
-        </div>
-        <div class="weapon-box">
-            <img src="arma3.jpg" alt="Arma 3">
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <div class="footer">
         <p>&copy; 2025 Edwin Esquivel | Página temática de Fortnite</p>
     </div>
 
+    <!-- Reproductor de sonido -->
+    <audio id="click-sound">
+        <source src="click-sound.mp3" type="audio/mp3">
+    </audio>
+
     <script>
+        // Función para reproducir sonido al presionar los botones
+        function playSound() {
+            var sound = document.getElementById("click-sound");
+            sound.play();
+        }
+
         // Función para activar la sección de contenido
         function toggleContent(element) {
             element.classList.toggle("active");
         }
 
-        // Mostrar la sección "¿Qué es Fortnite?" al hacer scroll
         document.addEventListener("scroll", function () {
             document.querySelector(".container").classList.add("visible");
         });
