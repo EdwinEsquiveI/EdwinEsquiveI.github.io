@@ -105,7 +105,7 @@
 
         /* SECCIÓN "¿Qué es Fortnite?" */
         .container {
-            background-color: #0e0e0e; 
+            background-color: #0e0e0e; /* Fondo negro sólido */
             max-width: 1100px;
             margin: 50px auto;
             padding: 40px;
@@ -115,7 +115,7 @@
             transform: translateY(30px);
             transition: all 0.8s ease-in-out;
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Asegura que esté por encima del video */
         }
 
         .container.visible {
@@ -171,6 +171,26 @@
             box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
         }
 
+        /* CONTENEDOR DEL VIDEO DE FONDO */
+        .video-container {
+            position: absolute; /* Asegura que el video esté en el fondo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Asegura que el video ocupe toda la pantalla */
+            overflow: hidden;
+            z-index: -1; /* Coloca el video detrás de las secciones */
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+        }
+
         /* SECCIÓN INTERACTIVA */
         .content {
             display: flex;
@@ -179,8 +199,8 @@
             gap: 40px;
             padding: 30px;
             position: relative;
-            z-index: 10;
-            background: rgba(0, 0, 0, 0.7);
+            z-index: 10; /* Asegura que esté por encima del video */
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
         }
 
         .content-box {
@@ -216,29 +236,30 @@
             display: block;
         }
 
-        /* NUEVA SECCIÓN DE ARMAS */
-        .weapons {
+        /* Sección de armas */
+        .weapons-section {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         .weapon-box {
-            width: 200px;
+            width: 150px;
             text-align: center;
             cursor: pointer;
+            transition: transform 0.3s ease-in-out;
         }
 
         .weapon-box img {
             width: 100%;
+            max-width: 120px;
             border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
         }
 
-        .weapon-box img:hover {
-            transform: scale(1.05);
+        .weapon-box:hover {
+            transform: scale(1.1);
         }
 
         /* FOOTER */
@@ -250,7 +271,7 @@
             font-size: 18px;
             color: #ffcc00;
             position: relative;
-            z-index: 10;
+            z-index: 10; /* Asegura que esté por encima del video */
         }
     </style>
 </head>
@@ -286,23 +307,34 @@
         </div>
     </div>
 
-    <!-- SECCIÓN DE MODO DE JUEGO -->
+    <!-- CONTENEDOR DEL VIDEO DE FONDO -->
+    <div class="video-container">
+        <video autoplay muted loop class="video-background">
+            <source src="fortnite-gameplay.webm" type="video/webm">
+        </video>
+    </div>
+
+    <!-- SECCIÓN INTERACTIVA -->
     <div class="content">
         <div class="content-box" onclick="toggleContent(this)">
             <img src="modo.jpeg" alt="Modos de Juego">
             <p>Fortnite cuenta con diferentes modos de juego como Battle Royale, Creativo y Salvar el Mundo.</p>
         </div>
+        <div class="content-box" onclick="toggleContent(this)">
+            <img src="eventos.jpg" alt="Eventos en Vivo">
+            <p>Epic Games organiza eventos en vivo que cambian la historia del juego en tiempo real.</p>
+        </div>
     </div>
 
     <!-- SECCIÓN DE ARMAS -->
-    <div class="weapons">
-        <div class="weapon-box" onclick="playSound()">
+    <div class="weapons-section">
+        <div class="weapon-box" onclick="playWeaponSound('arma1')">
             <img src="arma1.jpg" alt="Arma 1">
         </div>
-        <div class="weapon-box" onclick="playSound()">
+        <div class="weapon-box" onclick="playWeaponSound('arma2')">
             <img src="arma2.jpg" alt="Arma 2">
         </div>
-        <div class="weapon-box" onclick="playSound()">
+        <div class="weapon-box" onclick="playWeaponSound('arma3')">
             <img src="arma3.jpg" alt="Arma 3">
         </div>
     </div>
@@ -316,11 +348,26 @@
     <audio id="click-sound">
         <source src="click-sound.mp3" type="audio/mp3">
     </audio>
+    <audio id="arma1">
+        <source src="arma1-sound.mp3" type="audio/mp3">
+    </audio>
+    <audio id="arma2">
+        <source src="arma2-sound.mp3" type="audio/mp3">
+    </audio>
+    <audio id="arma3">
+        <source src="arma3-sound.mp3" type="audio/mp3">
+    </audio>
 
     <script>
         // Función para reproducir sonido al presionar los botones
         function playSound() {
             var sound = document.getElementById("click-sound");
+            sound.play();
+        }
+
+        // Función para reproducir sonido de armas
+        function playWeaponSound(weapon) {
+            var sound = document.getElementById(weapon);
             sound.play();
         }
 
