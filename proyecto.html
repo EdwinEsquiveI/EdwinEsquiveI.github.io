@@ -1,1 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Fortnite Battle Royale</title>
+    <link rel="icon" type="image/png" href="Fortnite.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Autor" content="Edwin Esquivel">
+    <meta name="Descripción" content="Página temática de Fortnite">
+    
+    <!-- Cargar la fuente Burbank Big Condensed desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            background: #0e0e0e;
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 50px;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .header h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .header h1:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #ffcc00;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* BANNER */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: url('fortnite1.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
+        }
+
+        .banner h2 {
+            font-size: 60px;
+            color: white;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 30px;
+            border-radius: 10px;
+            animation: bannerAnimation 2s ease-in-out;
+        }
+
+        @keyframes bannerAnimation {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* SECCIÓN "¿Qué es Fortnite?" */
+        .container {
+            background-color: #0e0e0e; /* Fondo negro sólido */
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-in-out;
+            position: relative;
+            z-index: 10; /* Asegura que esté por encima del video */
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .container h2 {
+            font-size: 50px;
+            margin-bottom: 25px;
+            color: #fff;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .container p {
+            font-size: 22px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* SECCIÓN BOTONES */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            width: 200px;
+            padding: 15px;
+            font-size: 22px;
+            color: white;
+            background: black;
+            border: 2px solid white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .button:hover {
+            background: white;
+            color: black;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.5);
+        }
+
+        /* CONTENEDOR DEL VIDEO DE FONDO */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Asegura que el video ocupe toda la pantalla */
+            overflow: hidden;
+            z-index: 1; /* Coloca el video detrás de las secciones */
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* SECCIÓN INTERACTIVA */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 30px;
+            position: relative;
+            z-index: 10; /* Asegura que esté por encima del video */
+            background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+        }
+
+        .content-box {
+            width: 80%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-box img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-box img:hover {
+            transform: scale(1.05);
+        }
+
+        .content-box p {
+            display: none;
+            margin-top: 15px;
+            font-size: 18px;
+            color: #ffcc00;
+        }
+
+        .content-box.active p {
+            display: block;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #fff;
+            position: relative;
+            z-index: 10; /* Asegura que esté por encima del video */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>FORTNITE</h1>
+        <div class="nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Noticias</a>
+            <a href="#">Skins</a>
+            <a href="#">Eventos</a>
+            <a href="#">Foro</a>
+        </div>
+    </div>
+
+    <!-- BANNER -->
+    <div class="banner">
+        <h2>Empecemos Ya</h2>
+    </div>
+
+    <!-- SECCIÓN "¿Qué es Fortnite?" -->
+    <div class="container">
+        <h2>¿Qué es Fortnite?</h2>
+        <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie. Se destaca por sus gráficos vibrantes, eventos en vivo y colaboraciones épicas.</p>
+        <div class="buttons">
+            <a href="historia.html" class="button" onclick="playSound()">Historia</a>
+            <a href="skins.html" class="button" onclick="playSound()">Skins</a>
+            <a href="mecanicas.html" class="button" onclick="playSound()">Mecánicas</a>
+            <a href="noticias.html" class="button" onclick="playSound()">Noticias</a>
+            <a href="foro.html" class="button" onclick="playSound()">Foro</a>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR DEL VIDEO DE FONDO -->
+    <div class="video-container">
+        <video autoplay muted loop class="video-background">
+            <source src="fortnite-gameplay.webm" type="video/webm">
+        </video>
+    </div>
+
+    <!-- SECCIÓN INTERACTIVA -->
+    <div class="content">
+        <div class="content-box" onclick="toggleContent(this)">
+            <img src="modo.jpeg" alt="Modos de Juego">
+            <p>Fortnite cuenta con diferentes modos de juego como Battle Royale, Creativo y Salvar el Mundo.</p>
+        </div>
+        <div class="content-box" onclick="toggleContent(this)">
+            <img src="eventos.jpg" alt="Eventos en Vivo">
+            <p>Epic Games organiza eventos en vivo que cambian la historia del juego en tiempo real.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>&copy; 2025 Edwin Esquivel | Página temática de Fortnite</p>
+    </div>
+
+    <!-- Reproductor de sonido -->
+    <audio id="click-sound">
+        <source src="click-sound.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        // Función para reproducir sonido al presionar los botones
+        function playSound() {
+            var sound = document.getElementById("click-sound");
+            sound.play();
+        }
+
+        // Función para activar la sección de contenido
+        function toggleContent(element) {
+            element.classList.toggle("active");
+        }
+
+        document.addEventListener("scroll", function () {
+            document.querySelector(".container").classList.add("visible");
+        });
+    </script>
+
+</body>
+</html>
+
+
 
