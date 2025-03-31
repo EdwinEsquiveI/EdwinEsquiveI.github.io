@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Fortnite Battle Royale</title>
+    <title>Fortnite Battle Royale | El juego más popular del mundo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Todo sobre Fortnite: noticias, skins, eventos y guías del famoso juego Battle Royale">
+    <link rel="icon" href="https://www.epicgames.com/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        :root {
+            --primary: #ff4655;
+            --secondary: #00ccff;
+            --accent: #ffcc00;
+            --dark: #0e0e0e;
+            --light: #ffffff;
+            --gray: #2a2a2a;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -15,11 +27,13 @@
 
         body {
             font-family: 'Burbank Big Condensed', sans-serif;
-            background: #0e0e0e;
-            color: white;
+            background: var(--dark);
+            color: var(--light);
             text-align: center;
+            line-height: 1.6;
         }
 
+        /* Header mejorado */
         .header {
             position: fixed;
             top: 0;
@@ -27,173 +41,659 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px 50px;
+            background: linear-gradient(to right, var(--dark), var(--gray), var(--dark));
+            padding: 15px 5%;
             z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid var(--accent);
         }
 
         .header h1 {
-            font-size: 40px;
-            color: #fff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-size: 2.5rem;
+            color: var(--light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
         }
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--light);
             text-decoration: none;
-            font-size: 18px;
-            padding: 10px 15px;
-            transition: 0.3s;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            position: relative;
+            letter-spacing: 1px;
         }
 
         .nav-links a:hover {
-            background: #ffcc00;
-            color: black;
+            color: var(--dark);
+            background: var(--accent);
+            transform: translateY(-3px);
         }
 
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Banner con efecto parallax */
         .banner {
             width: 100%;
-            height: 500px;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('fortnite1.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.imgur.com/JQK1J4h.jpg');
             background-size: cover;
             background-position: center;
-            margin-top: 70px;
+            background-attachment: fixed;
+            margin-top: 0;
+        }
+
+        .banner-content {
+            animation: fadeIn 1.5s ease-out;
         }
 
         .banner h2 {
-            font-size: 60px;
-            color: white;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px 30px;
-            border-radius: 10px;
+            font-size: 4rem;
+            color: var(--light);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            margin-bottom: 30px;
+            letter-spacing: 3px;
         }
 
+        .banner .btn-download {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            color: var(--dark);
+            background: var(--accent);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+        }
+
+        .banner .btn-download:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 204, 0, 0.6);
+            background: var(--light);
+        }
+
+        /* Sección principal */
         .container {
-            max-width: 1100px;
-            margin: 50px auto;
+            max-width: 1200px;
+            margin: 80px auto;
             padding: 40px;
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .container h2 {
-            font-size: 50px;
-            margin-bottom: 25px;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .container h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
         }
 
         .container p {
-            font-size: 22px;
+            font-size: 1.3rem;
             line-height: 1.8;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
+        /* Botones mejorados */
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .button {
-            display: inline-block;
-            padding: 15px;
-            font-size: 22px;
-            color: white;
-            background: black;
-            border: 2px solid white;
-            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: var(--light);
+            background: linear-gradient(45deg, var(--primary), #ff6b6b);
+            border: none;
+            border-radius: 8px;
             text-decoration: none;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            box-shadow: 0 4px 8px rgba(255, 70, 85, 0.3);
+        }
+
+        .button i {
+            margin-right: 10px;
+            font-size: 1.1rem;
         }
 
         .button:hover {
-            background: white;
-            color: black;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 70, 85, 0.4);
+            background: linear-gradient(45deg, #ff6b6b, var(--primary));
         }
 
+        /* Sección de contenido */
         .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
-            padding: 30px;
+            padding: 40px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .content-box {
-            width: 80%;
-            max-width: 800px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            padding: 30px;
             border-radius: 15px;
             text-align: center;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .content-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent);
         }
 
         .content-box img {
             width: 100%;
-            max-width: 300px;
+            max-width: 100%;
             border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
         }
 
-        .footer {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
+        .content-box:hover img {
+            transform: scale(1.05);
+        }
+
+        .content-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .content-box p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .content-box .btn-more {
+            display: inline-block;
+            padding: 8px 20px;
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .content-box .btn-more:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Nuevas secciones añadidas */
+        .stats-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://i.imgur.com/8JpZQ4a.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 80px 5%;
+            margin: 60px 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-container h2 {
+            font-size: 3rem;
+            color: var(--light);
+            margin-bottom: 50px;
             text-align: center;
-            margin-top: 40px;
-            font-size: 18px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-box {
+            background: rgba(20, 20, 20, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: scale(1.05);
+            background: rgba(30, 30, 30, 0.8);
+        }
+
+        .stat-box i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .stat-box .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .stat-box .stat-label {
+            font-size: 1.2rem;
+            color: var(--light);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary), #ff6b6b);
+            padding: 60px 5%;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background: var(--dark);
+            color: var(--light);
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--gray);
+        }
+
+        /* Footer mejorado */
+        .footer {
+            background: linear-gradient(to right, var(--dark), var(--gray), var(--dark));
+            padding: 50px 5% 30px;
+            text-align: center;
+            border-top: 2px solid var(--accent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -8px;
+            left: 0;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .banner h2 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 50px;
+                width: 100%;
+            }
+            
+            .newsletter-form button {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
+    <header class="header">
         <h1>FORTNITE</h1>
-        <div class="nav-links">
-            <a href="#">Inicio</a>
-            <a href="#">Noticias</a>
-            <a href="#">Skins</a>
-            <a href="#">Eventos</a>
+        <nav class="nav-links">
+            <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#news"><i class="fas fa-newspaper"></i> Noticias</a>
+            <a href="#skins"><i class="fas fa-tshirt"></i> Skins</a>
+            <a href="#events"><i class="fas fa-calendar-alt"></i> Eventos</a>
+            <a href="#guides"><i class="fas fa-book"></i> Guías</a>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h2>LA NUEVA TEMPORADA YA ESTÁ AQUÍ</h2>
+            <a href="https://www.epicgames.com/fortnite" class="btn-download">DESCARGAR AHORA</a>
         </div>
-    </div>
+    </section>
 
-    <div class="banner">
-        <h2>Empecemos Ya</h2>
-    </div>
-
-    <div class="container">
+    <main class="container">
         <h2>¿Qué es Fortnite?</h2>
-        <p>Fortnite es un videojuego de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten para ser el último en pie. Se destaca por sus gráficos vibrantes, eventos en vivo y colaboraciones épicas.</p>
+        <p>Fortnite es el fenómeno global de Battle Royale desarrollado por Epic Games, donde 100 jugadores compiten en un mapa que se reduce progresivamente hasta que solo queda uno en pie. Con su combinación única de construcción, combate y constantes actualizaciones, Fortnite se ha convertido en mucho más que un juego: es una plataforma cultural que alberga eventos masivos, colaboraciones épicas y una comunidad vibrante.</p>
+        
         <div class="buttons">
-            <a href="historia.html" class="button">Historia</a>
-            <a href="skins.html" class="button">Skins</a>
-            <a href="mecanicas.html" class="button">Mecánicas</a>
+            <a href="historia.html" class="button"><i class="fas fa-history"></i> Historia</a>
+            <a href="skins.html" class="button"><i class="fas fa-tshirt"></i> Skins</a>
+            <a href="mecanicas.html" class="button"><i class="fas fa-gamepad"></i> Mecánicas</a>
+            <a href="mapa.html" class="button"><i class="fas fa-map"></i> Mapa Actual</a>
+            <a href="torneos.html" class="button"><i class="fas fa-trophy"></i> Torneos</a>
         </div>
-    </div>
+    </main>
 
-    <div class="content">
-        <div class="content-box">
-            <img src="modo.jpeg" alt="Modos de Juego">
-            <p>Fortnite cuenta con diferentes modos de juego como Battle Royale, Creativo y Salvar el Mundo.</p>
-        </div>
-        <div class="content-box">
-            <img src="eventos.jpg" alt="Eventos en Vivo">
-            <p>Epic Games organiza eventos en vivo que cambian la historia del juego en tiempo real.</p>
-        </div>
-    </div>
+    <section id="news" class="content">
+        <article class="content-box">
+            <img src="https://i.imgur.com/JQK1J4h.jpg" alt="Nueva Temporada">
+            <h3>NUEVA TEMPORADA: REALMS OF MAGIC</h3>
+            <p>Descubre el nuevo pase de batalla lleno de skins mágicas, armas encantadas y un mapa transformado por fuerzas arcanas.</p>
+            <a href="#" class="btn-more">Ver detalles</a>
+        </article>
+        
+        <article class="content-box">
+            <img src="https://i.imgur.com/8JpZQ4a.jpg" alt="Evento en Vivo">
+            <h3>PRÓXIMO EVENTO EN VIVO</h3>
+            <p>Epic Games prepara otro evento que cambiará el mapa para siempre. No te pierdas este espectáculo único el próximo 15 de noviembre.</p>
+            <a href="#" class="btn-more">Ver detalles</a>
+        </article>
+        
+        <article class="content-box">
+            <img src="https://i.imgur.com/VvJ9QzX.jpg" alt="Colaboración Especial">
+            <h3>COLABORACIÓN: DRAGON BALL</h3>
+            <p>Goku, Vegeta y otros personajes llegan a Fortnite con skins especiales, gestos y hasta el Kamehameha como arma mítica.</p>
+            <a href="#" class="btn-more">Ver detalles</a>
+        </article>
+    </section>
 
-    <div class="footer">
-        <p>&copy; 2025 Edwin Esquivel | Página temática de Fortnite</p>
-    </div>
+    <section class="stats-section">
+        <div class="stats-container">
+            <h2>FORTNITE EN NÚMEROS</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">350M+</div>
+                    <div class="stat-label">Jugadores registrados</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-calendar-day"></i>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Años de evolución</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div class="stat-number">9B+</div>
+                    <div class="stat-label">En ingresos anuales</div>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-trophy"></i>
+                    <div class="stat-number">100M+</div>
+                    <div class="stat-label">Premios en torneos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skins" class="content">
+        <article class="content-box">
+            <img src="https://i.imgur.com/VvJ9QzX.jpg" alt="Skins Nuevas">
+            <h3>SKINS DE LA TEMPORADA</h3>
+            <p>Descubre todas las skins del nuevo pase de batalla, incluyendo la legendaria skin secreta que se desbloquea al completar todos los desafíos.</p>
+            <a href="#" class="btn-more">Ver skins</a>
+        </article>
+        
+        <article class="content-box">
+            <img src="https://i.imgur.com/JQK1J4h.jpg" alt="Tienda de Hoy">
+            <h3>TIENDA DE HOY</h3>
+            <p>Revisa qué skins están disponibles hoy en la tienda de objetos, con sus precios y bundles especiales por tiempo limitado.</p>
+            <a href="#" class="btn-more">Ver tienda</a>
+        </article>
+        
+        <article class="content-box">
+            <img src="https://i.imgur.com/8JpZQ4a.jpg" alt="Skins Raras">
+            <h3>SKINS MÁS RARAS</h3>
+            <p>Conoce las skins más exclusivas y difíciles de conseguir que solo los jugadores veteranos poseen en sus colecciones.</p>
+            <a href="#" class="btn-more">Ver listado</a>
+        </article>
+    </section>
+
+    <section class="newsletter">
+        <h2>¡NO TE PIERDAS LAS NOVEDADES!</h2>
+        <p>Suscríbete a nuestro newsletter y recibe las últimas noticias, actualizaciones y ofertas especiales directamente en tu correo.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <button type="submit">SUSCRIBIRME</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Fortnite</h3>
+                <ul>
+                    <li><a href="#">Descargar</a></li>
+                    <li><a href="#">Pase de Batalla</a></li>
+                    <li><a href="#">Notas del Parche</a></li>
+                    <li><a href="#">Estado del Servidor</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Comunidad</h3>
+                <ul>
+                    <li><a href="#">Foros</a></li>
+                    <li><a href="#">Torneos</a></li>
+                    <li><a href="#">Creadores</a></li>
+                    <li><a href="#">Programa de Afiliados</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Guías</a></li>
+                    <li><a href="#">Mapas Interactivos</a></li>
+                    <li><a href="#">Estadísticas</a></li>
+                    <li><a href="#">API</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-twitch"></i></a>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Fortnite Fan Site. No afiliado con Epic Games. Todos los derechos de Fortnite pertenecen a Epic Games.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
-
 
 
