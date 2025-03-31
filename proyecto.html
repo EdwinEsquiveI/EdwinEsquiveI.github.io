@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fortnite Battle Royale: El juego gratuito de supervivencia donde 100 jugadores compiten para ser el último en pie. Descarga ahora y únete a la batalla.">
     <link rel="icon" href="https://cdn2.unrealengine.com/fortnite-favicon-2018-244x244-c6c0e7f8c9c0.png">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&family=Teko:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Paleta de Fortnite mejorada */
+        /* Paleta de Fortnite */
         :root {
             --black: #0A0A0A;
             --dark: #121212;
@@ -20,6 +20,7 @@
             --orange-dark: #E67337;
             --accent: #FFD700;
             --red: #FF4655;
+            --blue: #00B4FF;
             --section-bg: #101010;
             --card-bg: #181818;
             --header-bg: rgba(10, 10, 10, 0.98);
@@ -45,10 +46,14 @@
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Anton', sans-serif;
+            font-family: 'Burbank Big Condensed', sans-serif;
             letter-spacing: 1.5px;
-            font-weight: 400;
+            font-weight: 700;
             text-transform: uppercase;
+        }
+
+        .fortnite-font {
+            font-family: 'Burbank Big Condensed', sans-serif;
         }
 
         .container {
@@ -58,10 +63,11 @@
             padding: 0 20px;
         }
 
-        /* Efecto de texto neón naranja */
-        .neon-text {
-            text-shadow: 0 0 5px var(--orange), 0 0 10px var(--orange), 0 0 20px var(--orange);
+        /* Efecto de texto Fortnite */
+        .fortnite-text {
             color: var(--light);
+            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+            position: relative;
         }
 
         .text-gradient {
@@ -71,7 +77,7 @@
             background-clip: text;
         }
 
-        /* Header estilo Fortnite mejorado */
+        /* Header estilo Fortnite */
         .header {
             position: fixed;
             top: 0;
@@ -104,7 +110,6 @@
         }
 
         .logo-text {
-            font-family: 'Anton', sans-serif;
             font-size: 2rem;
             background: var(--text-gradient);
             -webkit-background-clip: text;
@@ -125,15 +130,14 @@
             padding: 8px 0;
             position: relative;
             letter-spacing: 1.5px;
-            text-shadow: 0 0 5px rgba(255, 140, 66, 0.3);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
-            background: var(--text-gradient);
+            height: 3px;
+            background: var(--orange);
             bottom: 0;
             left: 0;
             transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -145,7 +149,6 @@
 
         .nav-links a:hover {
             color: var(--orange);
-            text-shadow: 0 0 10px var(--orange);
         }
 
         .btn-download {
@@ -161,6 +164,7 @@
             letter-spacing: 1.5px;
             box-shadow: 0 0 15px rgba(255, 140, 66, 0.5);
             text-transform: uppercase;
+            font-family: 'Burbank Big Condensed', sans-serif;
         }
 
         .btn-download:hover {
@@ -211,10 +215,10 @@
             font-size: 6rem;
             margin-bottom: 25px;
             line-height: 1;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             background: var(--text-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 3px 3px 0 #000, -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000;
             animation: glow 2s ease-in-out infinite alternate;
         }
 
@@ -257,6 +261,7 @@
             overflow: hidden;
             z-index: 1;
             font-size: 1rem;
+            font-family: 'Burbank Big Condensed', sans-serif;
         }
 
         .btn-primary {
@@ -276,7 +281,6 @@
             background-color: transparent;
             color: var(--orange);
             border: 2px solid var(--orange);
-            text-shadow: 0 0 5px rgba(255, 140, 66, 0.5);
         }
 
         .btn-secondary:hover {
@@ -292,6 +296,8 @@
             background-color: var(--section-bg);
             position: relative;
             overflow: hidden;
+            border-top: 1px solid rgba(255, 140, 66, 0.1);
+            border-bottom: 1px solid rgba(255, 140, 66, 0.1);
         }
 
         .season-section::before {
@@ -642,7 +648,7 @@
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 10px;
-            font-family: 'Anton', sans-serif;
+            font-family: 'Burbank Big Condensed', sans-serif;
             background: var(--text-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -735,7 +741,6 @@
         }
 
         .footer-logo-text {
-            font-family: 'Anton', sans-serif;
             font-size: 1.8rem;
             background: var(--text-gradient);
             -webkit-background-clip: text;
@@ -871,6 +876,30 @@
             animation: pulse 4s ease-in-out infinite;
         }
 
+        /* Efecto de construcción Fortnite */
+        .build-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .build-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 140, 66, 0.3), transparent);
+            transform: translateX(-100%);
+            animation: build 1.5s ease-in-out infinite;
+        }
+
+        @keyframes build {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .hero h1 {
@@ -978,13 +1007,13 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="neon-text">CHAPTER 5 - SEASON 3</h1>
+            <h1 class="fortnite-text">CHAPTER 5 - SEASON 3</h1>
             <p>Sumérgete en el desierto postapocalíptico con el nuevo Pase de Batalla lleno de recompensas, vehículos modificados y armas devastadoras.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary pulse-animation">
+                <a href="#" class="btn btn-primary pulse-animation build-effect">
                     <i class="fas fa-download"></i> Descargar Gratis
                 </a>
-                <a href="#" class="btn btn-secondary">
+                <a href="#" class="btn btn-secondary build-effect">
                     <i class="fas fa-play"></i> Ver Tráiler
                 </a>
             </div>
@@ -994,7 +1023,7 @@
     <!-- Season Section -->
     <section class="season-section" id="season">
         <div class="season-content">
-            <h2 class="section-title">NUEVA TEMPORADA</h2>
+            <h2 class="section-title fortnite-text">NUEVA TEMPORADA</h2>
             <p class="season-description">Wasteland Warriors trae un nuevo mapa desértico, vehículos modificados y un sistema de personalización de armas nunca antes visto en Fortnite.</p>
             
             <div class="season-features">
@@ -1002,7 +1031,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
-                    <h3>Nuevo Mapa</h3>
+                    <h3 class="fortnite-text">Nuevo Mapa</h3>
                     <p>Explora el vasto desierto postapocalíptico con nuevos puntos de interés y secretos por descubrir.</p>
                 </div>
                 
@@ -1010,7 +1039,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-car-crash"></i>
                     </div>
-                    <h3>Vehículos Modificados</h3>
+                    <h3 class="fortnite-text">Vehículos Modificados</h3>
                     <p>Personaliza tus vehículos con mejoras únicas y domina el campo de batalla con estilo.</p>
                 </div>
                 
@@ -1018,7 +1047,7 @@
                     <div class="feature-icon">
                         <i class="fas fa-gun"></i>
                     </div>
-                    <h3>Armas Personalizables</h3>
+                    <h3 class="fortnite-text">Armas Personalizables</h3>
                     <p>Modifica tus armas con diferentes componentes para adaptarlas a tu estilo de juego.</p>
                 </div>
             </div>
@@ -1028,14 +1057,14 @@
     <!-- Battle Pass Section -->
     <section class="battle-pass-section" id="battle-pass">
         <div class="battle-pass-content">
-            <h2 class="section-title">BATTLE PASS</h2>
+            <h2 class="section-title fortnite-text">BATTLE PASS</h2>
             <p class="season-description">Desbloquea más de 100 recompensas incluyendo 8 skins exclusivas, pickaxes, gestos y mucho más. Juega para subir de nivel y ganar V-Bucks.</p>
             
             <div class="battle-pass-items">
                 <div class="battle-pass-item glow-effect">
                     <img src="https://cdn2.unrealengine.com/fortnite-skin-1-512x512.jpg" alt="Skin 1">
                     <div class="item-content">
-                        <h3>Skin "Wastelander"</h3>
+                        <h3 class="fortnite-text">Skin "Wastelander"</h3>
                         <p>Desbloquea esta skin exclusiva al alcanzar el nivel 30 del Battle Pass.</p>
                         <a href="#" class="read-more">Ver detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1044,7 +1073,7 @@
                 <div class="battle-pass-item glow-effect">
                     <img src="https://cdn2.unrealengine.com/fortnite-pickaxe-1-512x512.jpg" alt="Pickaxe 1">
                     <div class="item-content">
-                        <h3>Pickaxe "Rust King"</h3>
+                        <h3 class="fortnite-text">Pickaxe "Rust King"</h3>
                         <p>Consigue este impresionante pickaxe al llegar al nivel 50.</p>
                         <a href="#" class="read-more">Ver detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1053,7 +1082,7 @@
                 <div class="battle-pass-item glow-effect">
                     <img src="https://cdn2.unrealengine.com/fortnite-emote-1-512x512.jpg" alt="Emote 1">
                     <div class="item-content">
-                        <h3>Emote "Desert Dance"</h3>
+                        <h3 class="fortnite-text">Emote "Desert Dance"</h3>
                         <p>Desbloquea este divertido emote al completar los desafíos semanales.</p>
                         <a href="#" class="read-more">Ver detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1065,14 +1094,14 @@
     <!-- News Section -->
     <section class="news-section" id="news">
         <div class="container">
-            <h2 class="section-title">ÚLTIMAS NOTICIAS</h2>
+            <h2 class="section-title fortnite-text">ÚLTIMAS NOTICIAS</h2>
             
             <div class="news-grid">
                 <article class="news-card glow-effect">
                     <img src="https://cdn2.unrealengine.com/fortnite-update-1-800x450.jpg" alt="Nueva Actualización">
                     <div class="news-content">
                         <span class="news-date">15 JUNIO 2025</span>
-                        <h3>Nueva Actualización: Wasteland Warriors</h3>
+                        <h3 class="fortnite-text">Nueva Actualización: Wasteland Warriors</h3>
                         <p>Descubre todas las novedades de la última actualización que incluye nuevo mapa, armas y vehículos.</p>
                         <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1082,7 +1111,7 @@
                     <img src="https://cdn2.unrealengine.com/fortnite-event-1-800x450.jpg" alt="Evento Especial">
                     <div class="news-content">
                         <span class="news-date">10 JUNIO 2025</span>
-                        <h3>Evento Especial: Torneo Global</h3>
+                        <h3 class="fortnite-text">Evento Especial: Torneo Global</h3>
                         <p>Participa en el torneo global con premios en efectivo y objetos exclusivos.</p>
                         <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1092,7 +1121,7 @@
                     <img src="https://cdn2.unrealengine.com/fortnite-creative-1-800x450.jpg" alt="Modo Creativo">
                     <div class="news-content">
                         <span class="news-date">5 JUNIO 2025</span>
-                        <h3>Nuevas Herramientas Creativas</h3>
+                        <h3 class="fortnite-text">Nuevas Herramientas Creativas</h3>
                         <p>Actualización del modo Creativo con nuevas herramientas y assets para construir tus propias islas.</p>
                         <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -1104,27 +1133,27 @@
     <!-- Stats Section -->
     <section class="stats-section" id="stats">
         <div class="stats-content">
-            <h2 class="section-title">FORTNITE EN NÚMEROS</h2>
+            <h2 class="section-title fortnite-text">FORTNITE EN NÚMEROS</h2>
             
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">350M+</div>
-                    <div class="stat-label">Jugadores</div>
+                    <div class="stat-label fortnite-text">Jugadores</div>
                 </div>
                 
                 <div class="stat-item">
                     <div class="stat-number">5B+</div>
-                    <div class="stat-label">Horas Jugadas</div>
+                    <div class="stat-label fortnite-text">Horas Jugadas</div>
                 </div>
                 
                 <div class="stat-item">
                     <div class="stat-number">125M</div>
-                    <div class="stat-label">Descargas Mensuales</div>
+                    <div class="stat-label fortnite-text">Descargas Mensuales</div>
                 </div>
                 
                 <div class="stat-item">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">Colaboraciones</div>
+                    <div class="stat-label fortnite-text">Colaboraciones</div>
                 </div>
             </div>
         </div>
@@ -1133,13 +1162,13 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2 class="section-title">¿LISTO PARA LA BATALLA?</h2>
+            <h2 class="section-title fortnite-text">¿LISTO PARA LA BATALLA?</h2>
             <p>Fortnite es completamente gratis y está disponible en todas las plataformas. Descárgalo ahora y únete a la batalla más grande del mundo.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary pulse-animation">
+                <a href="#" class="btn btn-primary pulse-animation build-effect">
                     <i class="fas fa-download"></i> Descargar Gratis
                 </a>
-                <a href="#" class="btn btn-secondary">
+                <a href="#" class="btn btn-secondary build-effect">
                     <i class="fas fa-users"></i> Unirse a Comunidad
                 </a>
             </div>
@@ -1168,7 +1197,7 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Juego</h3>
+                    <h3 class="fortnite-text">Juego</h3>
                     <ul class="footer-links">
                         <li><a href="#">Battle Royale</a></li>
                         <li><a href="#">Salvar el Mundo</a></li>
@@ -1179,7 +1208,7 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Recursos</h3>
+                    <h3 class="fortnite-text">Recursos</h3>
                     <ul class="footer-links">
                         <li><a href="#">Notas del Parche</a></li>
                         <li><a href="#">Estado del Servidor</a></li>
@@ -1190,7 +1219,7 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3>Legal</h3>
+                    <h3 class="fortnite-text">Legal</h3>
                     <ul class="footer-links">
                         <li><a href="#">Términos de Servicio</a></li>
                         <li><a href="#">Política de Privacidad</a></li>
@@ -1208,63 +1237,118 @@
     </footer>
 
     <script>
-        // Efecto de escritura para el título
-        const heroTitle = document.querySelector('.hero h1');
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        const typingEffect = setInterval(() => {
-            if (i < originalText.length) {
-                heroTitle.textContent += originalText.charAt(i);
-                i++;
-            } else {
-                clearInterval(typingEffect);
-            }
-        }, 100);
+        // Efecto de construcción Fortnite para elementos
+        function applyBuildEffect() {
+            const elements = document.querySelectorAll('.build-effect');
+            
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('build-effect-animate');
+                    
+                    setTimeout(() => {
+                        element.classList.remove('build-effect-animate');
+                    }, 1500);
+                }, index * 300);
+            });
+        }
 
-        // Smooth scrolling para enlaces de navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+        // Efecto de aparición de elementos al cargar
+        function animateOnLoad() {
+            const elements = document.querySelectorAll('.feature-card, .battle-pass-item, .news-card, .stat-item');
+            
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+
+        // Efecto de hover para tarjetas
+        function setupCardHover() {
+            const cards = document.querySelectorAll('.feature-card, .battle-pass-item, .news-card, .stat-item');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.classList.add('hover-effect');
+                });
                 
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                card.addEventListener('mouseleave', () => {
+                    card.classList.remove('hover-effect');
+                });
+            });
+        }
+
+        // Efecto de scroll suave
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Efecto de texto que aparece (como en los desafíos de Fortnite)
+        function animateChallengeText() {
+            const challengeText = document.querySelector('.hero h1');
+            const text = challengeText.textContent;
+            challengeText.textContent = '';
+            
+            let i = 0;
+            const typingEffect = setInterval(() => {
+                if (i < text.length) {
+                    challengeText.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingEffect);
                 }
+            }, 100);
+        }
+
+        // Inicialización de efectos
+        window.addEventListener('load', () => {
+            applyBuildEffect();
+            animateOnLoad();
+            setupCardHover();
+            setupSmoothScroll();
+            animateChallengeText();
+            
+            // Efecto de sonido al hacer hover en botones (opcional)
+            const buttons = document.querySelectorAll('.btn, .nav-links a');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    // Aquí podrías agregar un efecto de sonido
+                    // new Audio('fortnite-hover-sound.mp3').play();
+                });
             });
         });
 
-        // Efecto de aparición al hacer scroll
-        const animateOnScroll = () => {
+        // Efecto de scroll para animaciones
+        window.addEventListener('scroll', () => {
             const elements = document.querySelectorAll('.feature-card, .battle-pass-item, .news-card, .stat-item');
+            const windowHeight = window.innerHeight;
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
+                const elementVisible = 150;
                 
-                if (elementPosition < screenPosition) {
+                if (elementPosition < windowHeight - elementVisible) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
                 }
             });
-        };
-
-        // Configurar elementos para animación
-        document.querySelectorAll('.feature-card, .battle-pass-item, .news-card, .stat-item').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(50px)';
-            element.style.transition = 'all 0.6s ease-out';
         });
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>
