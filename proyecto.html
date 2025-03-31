@@ -14,11 +14,11 @@
             --primary: #00C7FF;
             --secondary: #FF4655;
             --accent: #FFD700;
-            --dark: #0A0A0A;  /* Más oscuro */
-            --darker: #050505; /* Nuevo tono más oscuro */
+            --dark: #121212;
+            --darker: #0A0A0A;
             --light: #FFFFFF;
-            --gray: #1A1A1A;  /* Más oscuro */
-            --section-bg: #0D0D0D; /* Más oscuro */
+            --gray: #1E1E1E;
+            --section-bg: #161616;
         }
         
         * {
@@ -632,15 +632,15 @@
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <img src="https://cdn2.unrealengine.com/fortnite-favicon-2018-244x244-c6c0e7f8c9c0.png" alt="Fortnite Logo" onerror="this.src='fortnite-logo.png'">
+            <img src="https://cdn2.unrealengine.com/fortnite-favicon-2018-244x244-c6c0e7f8c9c0.png" alt="Fortnite Logo">
             <span class="logo-text">FORTNITE</span>
         </div>
         <nav class="nav-links">
             <a href="#">Inicio</a>
             <a href="#">Battle Pass</a>
             <a href="#">Noticias</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="referencias.html">Referencias</a>
+            <a href="#">Contacto</a>
+            <a href="#">Referencias</a>
             <button class="btn-download">Jugar Gratis</button>
         </nav>
     </header>
@@ -704,7 +704,7 @@
         <h2 class="section-title">Últimas Noticias</h2>
         <div class="news-grid">
             <article class="news-card">
-                <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Nueva Temporada" onerror="this.src='season3.jpg'">
+                <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Nueva Temporada">
                 <span class="badge">Actualización</span>
                 <div class="news-content">
                     <span class="news-date">Junio 15, 2025</span>
@@ -715,7 +715,7 @@
             </article>
             
             <article class="news-card">
-                <img src="https://cdn2.unrealengine.com/fortnite-collab-marvel-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Colaboración Marvel" onerror="this.src='marvel-collab.jpg'">
+                <img src="https://cdn2.unrealengine.com/fortnite-collab-marvel-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Colaboración Marvel">
                 <span class="badge">Colaboración</span>
                 <div class="news-content">
                     <span class="news-date">Junio 10, 2025</span>
@@ -726,7 +726,7 @@
             </article>
             
             <article class="news-card">
-                <img src="https://cdn2.unrealengine.com/fortnite-tournament-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Torneo" onerror="this.src='tournament.jpg'">
+                <img src="https://cdn2.unrealengine.com/fortnite-tournament-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Torneo">
                 <span class="badge">Competitivo</span>
                 <div class="news-content">
                     <span class="news-date">Junio 5, 2025</span>
@@ -863,23 +863,7 @@
                 showSlide(index);
             });
         });
-        
-        // Fallback para imágenes
-        function checkImages() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                if (!img.complete || img.naturalWidth === 0) {
-                    const fallback = img.getAttribute('onerror');
-                    if (fallback) {
-                        img.src = fallback.split("'")[1];
-                    }
-                }
-            });
-        }
-        
-        window.addEventListener('load', checkImages);
     </script>
 
 </body>
 </html>
-
