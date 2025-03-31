@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Fortnite | Battle Royale | Epic Games</title>
+    <title>FORTNITE | Battle Royale | Epic Games</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fortnite Battle Royale: El juego gratuito de supervivencia donde 100 jugadores compiten para ser el último en pie. Descarga ahora y únete a la batalla.">
     <link rel="icon" href="https://cdn2.unrealengine.com/fortnite-favicon-2018-244x244-c6c0e7f8c9c0.png">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;700;800&family=Teko:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
     <style>
-        /* Variables de color - Tema Blanco Fortnite */
+        /* Paleta de Fortnite mejorada */
         :root {
-            --primary: #FF4655; /* Rojo Fortnite */
-            --secondary: #1E90FF; /* Azul Fortnite */
-            --accent: #FFD700; /* Oro Fortnite */
-            --dark: #2A2A2A;
+            --black: #0A0A0A;
+            --dark: #121212;
+            --darker: #080808;
+            --gray: #1E1E1E;
             --light: #FFFFFF;
-            --light-bg: #F8F9FA;
-            --light-gray: #E9ECEF;
-            --medium-gray: #DEE2E6;
-            --dark-gray: #6C757D;
-            --section-bg: #FFFFFF;
-            --card-bg: #FFFFFF;
-            --header-bg: rgba(255, 255, 255, 0.98);
-            --text-dark: #212529;
-            --text-medium: #495057;
-            --text-light: #6C757D;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-            --border: 1px solid rgba(0, 0, 0, 0.08);
-            --border-hover: 1px solid rgba(255, 70, 85, 0.3);
-            --gradient-fortnite: linear-gradient(135deg, #FF4655 0%, #1E90FF 50%, #FFD700 100%);
+            --orange: #FF8C42;
+            --orange-dark: #E67337;
+            --accent: #FFD700;
+            --red: #FF4655;
+            --section-bg: #101010;
+            --card-bg: #181818;
+            --header-bg: rgba(10, 10, 10, 0.98);
+            --border: 1px solid rgba(255, 140, 66, 0.1);
+            --border-hover: 1px solid var(--orange);
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 15px 35px rgba(255, 140, 66, 0.15);
+            --text-gradient: linear-gradient(90deg, var(--orange), var(--accent));
         }
 
-        /* Reset y Estilos Base */
         * {
             margin: 0;
             padding: 0;
@@ -44,30 +38,17 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-dark);
+            background-color: var(--black);
+            color: var(--light);
             overflow-x: hidden;
             line-height: 1.7;
-            font-weight: 400;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Anton', sans-serif;
             letter-spacing: 1.5px;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            font-weight: 400;
+            text-transform: uppercase;
         }
 
         .container {
@@ -77,95 +58,20 @@
             padding: 0 20px;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 35px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-fortnite);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .btn:hover::before {
-            opacity: 1;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
+        /* Efecto de texto neón naranja */
+        .neon-text {
+            text-shadow: 0 0 5px var(--orange), 0 0 10px var(--orange), 0 0 20px var(--orange);
             color: var(--light);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            color: var(--light);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            color: var(--light);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .section-title {
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 60px;
-            color: var(--text-dark);
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 5px;
-            background: var(--gradient-fortnite);
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 5px;
         }
 
         .text-gradient {
-            background: var(--gradient-fortnite);
+            background: var(--text-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-fill-color: transparent;
         }
 
-        /* Header - Estilo Blanco Fortnite */
+        /* Header estilo Fortnite mejorado */
         .header {
             position: fixed;
             top: 0;
@@ -177,8 +83,8 @@
             padding: 15px 5%;
             z-index: 1000;
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-            border-bottom: var(--border);
+            border-bottom: 1px solid rgba(255, 140, 66, 0.1);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
@@ -189,22 +95,21 @@
         }
 
         .logo:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .logo img {
             height: 45px;
+            filter: drop-shadow(0 0 5px rgba(255, 140, 66, 0.5));
         }
 
         .logo-text {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.2rem;
-            color: var(--primary);
+            font-family: 'Anton', sans-serif;
+            font-size: 2rem;
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: 2px;
-        }
-
-        .logo-text span {
-            color: var(--text-dark);
         }
 
         .nav-links {
@@ -214,21 +119,21 @@
         }
 
         .nav-links a {
-            color: var(--text-dark);
+            color: var(--light);
             font-weight: 600;
             font-size: 0.95rem;
             padding: 8px 0;
             position: relative;
-            text-transform: uppercase;
             letter-spacing: 1.5px;
+            text-shadow: 0 0 5px rgba(255, 140, 66, 0.3);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 3px;
-            background: var(--gradient-fortnite);
+            height: 2px;
+            background: var(--text-gradient);
             bottom: 0;
             left: 0;
             transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -239,12 +144,13 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--orange);
+            text-shadow: 0 0 10px var(--orange);
         }
 
         .btn-download {
-            background: var(--gradient-fortnite);
-            color: var(--light);
+            background: var(--orange);
+            color: var(--black);
             padding: 12px 30px;
             border-radius: 6px;
             font-weight: 700;
@@ -252,17 +158,18 @@
             border: none;
             cursor: pointer;
             font-size: 0.95rem;
-            text-transform: uppercase;
             letter-spacing: 1.5px;
-            box-shadow: 0 4px 15px rgba(255, 70, 85, 0.3);
+            box-shadow: 0 0 15px rgba(255, 140, 66, 0.5);
+            text-transform: uppercase;
         }
 
         .btn-download:hover {
+            background: var(--orange-dark);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 70, 85, 0.4);
+            box-shadow: 0 0 25px rgba(255, 140, 66, 0.8);
         }
 
-        /* Hero Section - Estilo Blanco */
+        /* Hero Section - Estilo Juego */
         .hero {
             width: 100%;
             height: 100vh;
@@ -270,82 +177,175 @@
             position: relative;
             overflow: hidden;
             margin-top: 80px;
-            background-color: var(--light);
+            background: radial-gradient(ellipse at center, var(--darker) 0%, var(--black) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 5%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text {
-            max-width: 600px;
-            animation: fadeInLeft 1s ease-out;
-        }
-
-        .hero-image {
-            width: 50%;
-            animation: fadeInRight 1s ease-out;
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-            transform: perspective(1000px) rotateY(-15deg);
-            transition: transform 0.5s ease;
-        }
-
-        .hero-image:hover img {
-            transform: perspective(1000px) rotateY(-5deg);
+            text-align: center;
         }
 
         .hero h1 {
-            font-size: 5.5rem;
+            font-size: 6rem;
             margin-bottom: 25px;
-            color: var(--text-dark);
             line-height: 1;
-        }
-
-        .hero h1 span {
-            background: var(--gradient-fortnite);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background: var(--text-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px var(--orange), 0 0 10px rgba(255, 140, 66, 0.5);
+            }
+            to {
+                text-shadow: 0 0 10px var(--orange), 0 0 20px rgba(255, 140, 66, 0.7), 0 0 30px rgba(255, 140, 66, 0.3);
+            }
         }
 
         .hero p {
             font-size: 1.3rem;
-            color: var(--text-medium);
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 40px;
+            max-width: 700px;
             line-height: 1.7;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .hero-buttons {
             display: flex;
             gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        /* Features Section */
-        .features-section {
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--orange);
+            color: var(--black);
+            box-shadow: 0 5px 20px rgba(255, 140, 66, 0.4);
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 140, 66, 0.6);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--orange);
+            border: 2px solid var(--orange);
+            text-shadow: 0 0 5px rgba(255, 140, 66, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 140, 66, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 140, 66, 0.2);
+            color: var(--light);
+        }
+
+        /* Sección de Temporada */
+        .season-section {
             padding: 120px 5%;
-            background-color: var(--light-bg);
+            background-color: var(--section-bg);
+            position: relative;
+            overflow: hidden;
         }
 
-        .features-grid {
+        .season-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn2.unrealengine.com/fortnite-battle-pass-chapter-5-season-3-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .season-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            margin-bottom: 60px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: var(--text-gradient);
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .season-description {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        .season-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
             margin-top: 60px;
         }
 
@@ -357,6 +357,20 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: var(--shadow);
             border: var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--text-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .feature-card:hover {
@@ -365,74 +379,55 @@
             border: var(--border-hover);
         }
 
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
         .feature-icon {
             width: 80px;
             height: 80px;
             margin: 0 auto 25px;
-            background: var(--gradient-fortnite);
+            background: var(--text-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
+            color: var(--black);
             font-size: 2rem;
-            box-shadow: 0 10px 20px rgba(255, 70, 85, 0.2);
+            box-shadow: 0 10px 20px rgba(255, 140, 66, 0.3);
         }
 
         .feature-card h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
-            color: var(--text-dark);
+            color: var(--light);
         }
 
         .feature-card p {
-            color: var(--text-medium);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1rem;
+            line-height: 1.7;
         }
 
         /* Battle Pass Section */
         .battle-pass-section {
             padding: 120px 5%;
-            background-color: var(--light);
+            background-color: var(--darker);
             position: relative;
             overflow: hidden;
         }
 
         .battle-pass-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
             position: relative;
             z-index: 2;
         }
 
-        .battle-pass-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://cdn2.unrealengine.com/fortnite-battle-pass-chapter-5-season-3-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
-            opacity: 0.08;
-            z-index: 1;
-        }
-
-        .battle-pass-content h2 {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            color: var(--text-dark);
-        }
-
-        .battle-pass-content p {
-            font-size: 1.3rem;
-            color: var(--text-medium);
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-
         .battle-pass-items {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
@@ -440,49 +435,73 @@
         .battle-pass-item {
             background-color: var(--card-bg);
             border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: var(--shadow);
             border: var(--border);
+            position: relative;
+        }
+
+        .battle-pass-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--text-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .battle-pass-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             box-shadow: var(--shadow-hover);
             border: var(--border-hover);
         }
 
+        .battle-pass-item:hover::before {
+            opacity: 1;
+        }
+
         .battle-pass-item img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .battle-pass-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .item-content {
+            padding: 25px;
         }
 
         .battle-pass-item h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
-            color: var(--text-dark);
+            color: var(--light);
         }
 
         .battle-pass-item p {
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
-            color: var(--text-medium);
             margin-bottom: 20px;
+            line-height: 1.7;
         }
 
-        /* News Section */
+        /* Noticias Section */
         .news-section {
             padding: 120px 5%;
-            background-color: var(--light-bg);
+            background-color: var(--section-bg);
         }
 
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            gap: 30px;
             margin-top: 60px;
         }
 
@@ -493,12 +512,29 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: var(--shadow);
             border: var(--border);
+            position: relative;
+        }
+
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--text-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .news-card:hover {
             transform: translateY(-15px);
             box-shadow: var(--shadow-hover);
             border: var(--border-hover);
+        }
+
+        .news-card:hover::before {
+            opacity: 1;
         }
 
         .news-card img {
@@ -512,167 +548,72 @@
             transform: scale(1.05);
         }
 
-        .news-card .badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: var(--primary);
-            color: var(--light);
-            padding: 6px 18px;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(255, 70, 85, 0.3);
-            z-index: 2;
-        }
-
         .news-content {
-            padding: 30px;
-        }
-
-        .news-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-            transition: color 0.3s ease;
-        }
-
-        .news-card:hover .news-content h3 {
-            color: var(--primary);
-        }
-
-        .news-content p {
-            color: var(--text-medium);
-            font-size: 1rem;
-            margin-bottom: 20px;
-            line-height: 1.7;
+            padding: 25px;
         }
 
         .news-date {
-            color: var(--primary);
+            color: var(--orange);
             font-size: 0.9rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: block;
             font-weight: 600;
         }
 
+        .news-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .news-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
         .read-more {
-            color: var(--primary);
+            color: var(--orange);
             font-weight: 600;
             font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .read-more:hover {
+            color: var(--light);
             gap: 12px;
         }
 
-        /* Characters Section */
-        .characters-section {
-            padding: 120px 5%;
-            background-color: var(--light);
-        }
-
-        .characters-slider {
-            margin-top: 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .characters-container {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .character-card {
-            min-width: 100%;
-            padding: 0 15px;
-            transition: all 0.3s ease;
-        }
-
-        .character-card-inner {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .character-card-inner:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border: var(--border-hover);
-        }
-
-        .character-image {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .character-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .character-card-inner:hover .character-image img {
-            transform: scale(1.1);
-        }
-
-        .character-info {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .character-info h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-
-        .character-info p {
-            color: var(--text-medium);
-            margin-bottom: 20px;
-        }
-
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
-        }
-
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--medium-gray);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slider-dot.active {
-            background: var(--gradient-fortnite);
-            transform: scale(1.3);
-        }
-
-        /* Stats Section */
+        /* Estadísticas Section */
         .stats-section {
             padding: 100px 5%;
-            background: var(--gradient-fortnite);
-            color: var(--light);
+            background: linear-gradient(135deg, var(--darker) 0%, var(--black) 100%);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn2.unrealengine.com/fortnite-pattern-1-1920x1080.jpg') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .stats-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .stats-grid {
@@ -683,30 +624,34 @@
         }
 
         .stat-item {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 140, 66, 0.1);
             backdrop-filter: blur(5px);
             border-radius: 12px;
             padding: 40px 20px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 140, 66, 0.2);
         }
 
         .stat-item:hover {
             transform: translateY(-10px);
-            background-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 140, 66, 0.2);
+            box-shadow: 0 10px 30px rgba(255, 140, 66, 0.1);
         }
 
         .stat-number {
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 10px;
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Anton', sans-serif;
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .stat-label {
             font-size: 1.2rem;
             font-weight: 500;
+            color: var(--light);
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
@@ -714,46 +659,47 @@
         /* CTA Section */
         .cta-section {
             padding: 120px 5%;
-            background-color: var(--light);
+            background-color: var(--black);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-bg {
+        .cta-section::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: url('https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
-            opacity: 0.08;
-            z-index: 1;
+            opacity: 0.2;
+            z-index: 0;
         }
 
         .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
             position: relative;
             z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .cta-content h2 {
             font-size: 3.5rem;
             margin-bottom: 25px;
-            color: var(--text-dark);
+            color: var(--light);
         }
 
         .cta-content p {
-            font-size: 1.3rem;
-            color: var(--text-medium);
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 40px;
             line-height: 1.7;
         }
 
         /* Footer */
         .footer {
-            background-color: var(--dark);
+            background-color: var(--darker);
             color: var(--light);
             padding: 80px 5% 40px;
             position: relative;
@@ -766,7 +712,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: var(--gradient-fortnite);
+            background: var(--text-gradient);
         }
 
         .footer-content {
@@ -786,13 +732,14 @@
 
         .footer-logo img {
             height: 40px;
-            filter: brightness(0) invert(1);
         }
 
         .footer-logo-text {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Anton', sans-serif;
             font-size: 1.8rem;
-            color: var(--light);
+            background: var(--text-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             letter-spacing: 1.5px;
         }
 
@@ -812,7 +759,7 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -822,7 +769,8 @@
         }
 
         .footer-social a:hover {
-            background: var(--gradient-fortnite);
+            background: var(--text-gradient);
+            color: var(--black);
             transform: translateY(-5px);
         }
 
@@ -839,7 +787,7 @@
             position: absolute;
             width: 40px;
             height: 3px;
-            background: var(--gradient-fortnite);
+            background: var(--text-gradient);
             bottom: -10px;
             left: 0;
             border-radius: 3px;
@@ -860,48 +808,8 @@
         }
 
         .footer-links a:hover {
-            color: var(--light);
+            color: var(--orange);
             transform: translateX(5px);
-        }
-
-        .footer-newsletter p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-bottom: 20px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 6px 0 0 6px;
-            font-size: 0.95rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--light);
-        }
-
-        .newsletter-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .newsletter-btn {
-            background: var(--gradient-fortnite);
-            color: var(--light);
-            border: none;
-            padding: 0 20px;
-            border-radius: 0 6px 6px 0;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-btn:hover {
-            opacity: 0.9;
         }
 
         .footer-bottom {
@@ -914,7 +822,29 @@
             font-size: 0.9rem;
         }
 
-        /* Animaciones Personalizadas */
+        /* Efectos Especiales */
+        .glow-effect {
+            position: relative;
+        }
+
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 140, 66, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .glow-effect:hover::after {
+            opacity: 1;
+        }
+
+        /* Animaciones */
         @keyframes float {
             0%, 100% {
                 transform: translateY(0);
@@ -941,67 +871,24 @@
             animation: pulse 4s ease-in-out infinite;
         }
 
-        /* Efectos Especiales */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .gradient-border {
-            position: relative;
-            border-radius: 12px;
-        }
-
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-fortnite);
-            z-index: -1;
-            border-radius: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gradient-border:hover::before {
-            opacity: 1;
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 1200px) {
             .hero h1 {
-                font-size: 4.5rem;
+                font-size: 5rem;
             }
             
             .section-title {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
         }
 
         @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
+            .hero h1 {
+                font-size: 4rem;
             }
             
-            .hero-text {
-                margin-bottom: 50px;
-            }
-            
-            .hero-image {
-                width: 80%;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
+            .section-title {
+                font-size: 3rem;
             }
             
             .nav-links {
@@ -1055,11 +942,11 @@
                 font-size: 2.2rem;
             }
             
-            .hero p, .battle-pass-content p, .cta-content p {
+            .hero p, .season-description, .cta-content p {
                 font-size: 1.1rem;
             }
             
-            .features-grid, .battle-pass-items, .news-grid {
+            .season-features, .battle-pass-items, .news-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -1072,21 +959,18 @@
 </head>
 <body>
 
-    <!-- Efecto de Partículas -->
-    <canvas class="particles" id="particles"></canvas>
-
     <!-- Header -->
     <header class="header">
         <div class="logo">
             <img src="https://cdn2.unrealengine.com/fortnite-favicon-2018-244x244-c6c0e7f8c9c0.png" alt="Fortnite Logo">
-            <span class="logo-text">FORT<span>NITE</span></span>
+            <span class="logo-text">FORTNITE</span>
         </div>
         <nav class="nav-links">
             <a href="#home">Inicio</a>
+            <a href="#season">Temporada</a>
             <a href="#battle-pass">Battle Pass</a>
             <a href="#news">Noticias</a>
-            <a href="#characters">Personajes</a>
-            <a href="#features">Modos de Juego</a>
+            <a href="#stats">Estadísticas</a>
             <button class="btn-download">Descargar Gratis</button>
         </nav>
     </header>
@@ -1094,51 +978,48 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>VIVE LA NUEVA <span>TEMPORADA</span></h1>
-                <p>Sumérgete en el emocionante mundo de Fortnite Battle Royale, donde 100 jugadores compiten para ser el último en pie. Descarga gratis y únete a la batalla más épica.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-download"></i> Descargar Ahora
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-play"></i> Ver Tráiler
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image float-animation">
-                <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Fortnite Chapter 5 Season 3">
+            <h1 class="neon-text">CHAPTER 5 - SEASON 3</h1>
+            <p>Sumérgete en el desierto postapocalíptico con el nuevo Pase de Batalla lleno de recompensas, vehículos modificados y armas devastadoras.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary pulse-animation">
+                    <i class="fas fa-download"></i> Descargar Gratis
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-play"></i> Ver Tráiler
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section" id="features">
-        <div class="container">
-            <h2 class="section-title">MODOS DE JUEGO</h2>
-            <div class="features-grid">
-                <div class="feature-card gradient-border">
+    <!-- Season Section -->
+    <section class="season-section" id="season">
+        <div class="season-content">
+            <h2 class="section-title">NUEVA TEMPORADA</h2>
+            <p class="season-description">Wasteland Warriors trae un nuevo mapa desértico, vehículos modificados y un sistema de personalización de armas nunca antes visto en Fortnite.</p>
+            
+            <div class="season-features">
+                <div class="feature-card glow-effect">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-map-marked-alt"></i>
                     </div>
-                    <h3>Battle Royale</h3>
-                    <p>El clásico modo donde 100 jugadores compiten para ser el último en pie. Construye, dispara y sobrevive en este intenso juego de estrategia y habilidad.</p>
+                    <h3>Nuevo Mapa</h3>
+                    <p>Explora el vasto desierto postapocalíptico con nuevos puntos de interés y secretos por descubrir.</p>
                 </div>
                 
-                <div class="feature-card gradient-border">
+                <div class="feature-card glow-effect">
                     <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-car-crash"></i>
                     </div>
-                    <h3>Salvar el Mundo</h3>
-                    <p>Únete a otros jugadores para luchar contra hordas de monstruos en este modo cooperativo PvE. Construye fortalezas y protege objetivos.</p>
+                    <h3>Vehículos Modificados</h3>
+                    <p>Personaliza tus vehículos con mejoras únicas y domina el campo de batalla con estilo.</p>
                 </div>
                 
-                <div class="feature-card gradient-border">
+                <div class="feature-card glow-effect">
                     <div class="feature-icon">
-                        <i class="fas fa-paint-brush"></i>
+                        <i class="fas fa-gun"></i>
                     </div>
-                    <h3>Modo Creativo</h3>
-                    <p>Crea tus propias islas y juega en miles de experiencias creadas por la comunidad. Las posibilidades son infinitas con las herramientas de creación.</p>
+                    <h3>Armas Personalizables</h3>
+                    <p>Modifica tus armas con diferentes componentes para adaptarlas a tu estilo de juego.</p>
                 </div>
             </div>
         </div>
@@ -1146,32 +1027,35 @@
 
     <!-- Battle Pass Section -->
     <section class="battle-pass-section" id="battle-pass">
-        <div class="battle-pass-bg"></div>
-        <div class="container">
-            <div class="battle-pass-content">
-                <h2 class="section-title">BATTLE PASS</h2>
-                <p>Desbloquea más de 100 recompensas exclusivas incluyendo skins, emotes, pickaxes y mucho más. Juega para subir de nivel y ganar V-Bucks.</p>
-                <a href="#" class="btn btn-primary pulse-animation">
-                    <i class="fas fa-shopping-cart"></i> Obtener Battle Pass
-                </a>
-                
-                <div class="battle-pass-items">
-                    <div class="battle-pass-item gradient-border">
-                        <img src="https://cdn2.unrealengine.com/fortnite-skin-1-512x512.jpg" alt="Skin 1">
-                        <h3>Skin Épica</h3>
+        <div class="battle-pass-content">
+            <h2 class="section-title">BATTLE PASS</h2>
+            <p class="season-description">Desbloquea más de 100 recompensas incluyendo 8 skins exclusivas, pickaxes, gestos y mucho más. Juega para subir de nivel y ganar V-Bucks.</p>
+            
+            <div class="battle-pass-items">
+                <div class="battle-pass-item glow-effect">
+                    <img src="https://cdn2.unrealengine.com/fortnite-skin-1-512x512.jpg" alt="Skin 1">
+                    <div class="item-content">
+                        <h3>Skin "Wastelander"</h3>
                         <p>Desbloquea esta skin exclusiva al alcanzar el nivel 30 del Battle Pass.</p>
+                        <a href="#" class="read-more">Ver detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    
-                    <div class="battle-pass-item gradient-border">
-                        <img src="https://cdn2.unrealengine.com/fortnite-pickaxe-1-512x512.jpg" alt="Pickaxe 1">
-                        <h3>Pickaxe Legendario</h3>
+                </div>
+                
+                <div class="battle-pass-item glow-effect">
+                    <img src="https://cdn2.unrealengine.com/fortnite-pickaxe-1-512x512.jpg" alt="Pickaxe 1">
+                    <div class="item-content">
+                        <h3>Pickaxe "Rust King"</h3>
                         <p>Consigue este impresionante pickaxe al llegar al nivel 50.</p>
+                        <a href="#" class="read-more">Ver detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    
-                    <div class="battle-pass-item gradient-border">
-                        <img src="https://cdn2.unrealengine.com/fortnite-emote-1-512x512.jpg" alt="Emote 1">
-                        <h3>Emote Exclusivo</h3>
+                </div>
+                
+                <div class="battle-pass-item glow-effect">
+                    <img src="https://cdn2.unrealengine.com/fortnite-emote-1-512x512.jpg" alt="Emote 1">
+                    <div class="item-content">
+                        <h3>Emote "Desert Dance"</h3>
                         <p>Desbloquea este divertido emote al completar los desafíos semanales.</p>
+                        <a href="#" class="read-more">Ver detalles <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1182,12 +1066,10 @@
     <section class="news-section" id="news">
         <div class="container">
             <h2 class="section-title">ÚLTIMAS NOTICIAS</h2>
+            
             <div class="news-grid">
-                <article class="news-card gradient-border">
-                    <div class="news-image">
-                        <img src="https://cdn2.unrealengine.com/fortnite-update-1-800x450.jpg" alt="Nueva Actualización">
-                        <span class="badge">Actualización</span>
-                    </div>
+                <article class="news-card glow-effect">
+                    <img src="https://cdn2.unrealengine.com/fortnite-update-1-800x450.jpg" alt="Nueva Actualización">
                     <div class="news-content">
                         <span class="news-date">15 JUNIO 2025</span>
                         <h3>Nueva Actualización: Wasteland Warriors</h3>
@@ -1196,67 +1078,34 @@
                     </div>
                 </article>
                 
-                <article class="news-card gradient-border">
-                    <div class="news-image">
-                        <img src="https://cdn2.unrealengine.com/fortnite-event-1-800x450.jpg" alt="Evento Especial">
-                        <span class="badge">Evento</span>
-                    </div>
+                <article class="news-card glow-effect">
+                    <img src="https://cdn2.unrealengine.com/fortnite-event-1-800x450.jpg" alt="Evento Especial">
                     <div class="news-content">
                         <span class="news-date">10 JUNIO 2025</span>
-                        <h3>Evento Especial: Colaboración Marvel</h3>
-                        <p>Los Vengadores llegan a Fortnite con skins exclusivas y un evento que cambiará la isla.</p>
+                        <h3>Evento Especial: Torneo Global</h3>
+                        <p>Participa en el torneo global con premios en efectivo y objetos exclusivos.</p>
                         <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
                 
-                <article class="news-card gradient-border">
-                    <div class="news-image">
-                        <img src="https://cdn2.unrealengine.com/fortnite-tournament-1-800x450.jpg" alt="Torneo">
-                        <span class="badge">Competitivo</span>
-                    </div>
+                <article class="news-card glow-effect">
+                    <img src="https://cdn2.unrealengine.com/fortnite-creative-1-800x450.jpg" alt="Modo Creativo">
                     <div class="news-content">
                         <span class="news-date">5 JUNIO 2025</span>
-                        <h3>FNCS: Torneo con $5 Millones</h3>
-                        <p>Inscripciones abiertas para el Fortnite Championship Series con premios millonarios.</p>
+                        <h3>Nuevas Herramientas Creativas</h3>
+                        <p>Actualización del modo Creativo con nuevas herramientas y assets para construir tus propias islas.</p>
                         <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Characters Section -->
-    <section class="characters-section" id="characters">
-        <div class="container">
-            <h2 class="section-title">PERSONAJES DESTACADOS</h2>
-            <div class="characters-slider">
-                <div class="characters-container" id="characters-slider">
-                    <div class="character-card">
-                        <div class="character-card-inner gradient-border">
-                            <div class="character-image">
-                                <img src="https://cdn2.unrealengine.com/fortnite-character-1-800x600.jpg" alt="Personaje 1">
-                            </div>
-                            <div class="character-info">
-                                <h3>Raven</h3>
-                                <p>El misterioso cuervo que trae oscuridad a la isla. Desbloquea su estilo alternativo completando los desafíos.</p>
-                                <a href="#" class="btn btn-secondary">Ver Detalles</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slider-controls">
-                    <div class="slider-dot active"></div>
-                    <div class="slider-dot"></div>
-                    <div class="slider-dot"></div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
+    <section class="stats-section" id="stats">
+        <div class="stats-content">
             <h2 class="section-title">FORTNITE EN NÚMEROS</h2>
+            
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">350M+</div>
@@ -1283,19 +1132,16 @@
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="cta-bg"></div>
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="section-title">¿QUÉ ESPERAS PARA JUGAR?</h2>
-                <p>Fortnite es completamente gratis y está disponible en todas las plataformas. Descárgalo ahora y únete a la batalla más grande del mundo.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-download"></i> Descargar Gratis
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-users"></i> Unirse a Comunidad
-                    </a>
-                </div>
+        <div class="cta-content">
+            <h2 class="section-title">¿LISTO PARA LA BATALLA?</h2>
+            <p>Fortnite es completamente gratis y está disponible en todas las plataformas. Descárgalo ahora y únete a la batalla más grande del mundo.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary pulse-animation">
+                    <i class="fas fa-download"></i> Descargar Gratis
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-users"></i> Unirse a Comunidad
+                </a>
             </div>
         </div>
     </section>
@@ -1352,20 +1198,6 @@
                         <li><a href="#">Contáctanos</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-column">
-                    <h3>Boletín</h3>
-                    <div class="footer-newsletter">
-                        <p>Suscríbete para recibir las últimas noticias y actualizaciones directamente en tu correo.</p>
-                        <form class="newsletter-form">
-                            <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
-                            <button type="submit" class="newsletter-btn">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                        <p><small>Al suscribirte aceptas nuestra Política de Privacidad.</small></p>
-                    </div>
-                </div>
             </div>
             
             <div class="footer-bottom">
@@ -1376,123 +1208,20 @@
     </footer>
 
     <script>
-        // Slider de Personajes
-        let currentCharacter = 0;
-        const characters = [
-            {
-                image: "https://cdn2.unrealengine.com/fortnite-character-1-800x600.jpg",
-                name: "Raven",
-                description: "El misterioso cuervo que trae oscuridad a la isla. Desbloquea su estilo alternativo completando los desafíos."
-            },
-            {
-                image: "https://cdn2.unrealengine.com/fortnite-character-2-800x600.jpg",
-                name: "Peely",
-                description: "El plátano más famoso de Fortnite. Divertido y pegajoso, perfecto para bailar después de una victoria."
-            },
-            {
-                image: "https://cdn2.unrealengine.com/fortnite-character-3-800x600.jpg",
-                name: "Midas",
-                description: "El rey dorado con el toque de Midas. Todo lo que toca se convierte en oro, incluyendo a sus enemigos."
+        // Efecto de escritura para el título
+        const heroTitle = document.querySelector('.hero h1');
+        const originalText = heroTitle.textContent;
+        heroTitle.textContent = '';
+        
+        let i = 0;
+        const typingEffect = setInterval(() => {
+            if (i < originalText.length) {
+                heroTitle.textContent += originalText.charAt(i);
+                i++;
+            } else {
+                clearInterval(typingEffect);
             }
-        ];
-
-        const sliderContainer = document.getElementById('characters-slider');
-        const characterDots = document.querySelectorAll('.characters-slider .slider-dot');
-
-        function renderCharacter(index) {
-            const character = characters[index];
-            sliderContainer.innerHTML = `
-                <div class="character-card">
-                    <div class="character-card-inner gradient-border">
-                        <div class="character-image">
-                            <img src="${character.image}" alt="${character.name}">
-                        </div>
-                        <div class="character-info">
-                            <h3>${character.name}</h3>
-                            <p>${character.description}</p>
-                            <a href="#" class="btn btn-secondary">Ver Detalles</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            characterDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        function nextCharacter() {
-            currentCharacter = (currentCharacter + 1) % characters.length;
-            renderCharacter(currentCharacter);
-        }
-
-        // Cambiar personaje cada 5 segundos
-        setInterval(nextCharacter, 5000);
-
-        // Control manual con dots
-        characterDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentCharacter = index;
-                renderCharacter(currentCharacter);
-            });
-        });
-
-        // Inicializar con el primer personaje
-        renderCharacter(0);
-
-        // Efecto de partículas para el fondo
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const particles = [];
-        const particleCount = window.innerWidth < 768 ? 50 : 100;
-        
-        // Crear partículas
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 4 + 1,
-                speedX: Math.random() * 1 - 0.5,
-                speedY: Math.random() * 1 - 0.5,
-                color: `rgba(255, 70, 85, ${Math.random() * 0.3 + 0.1})`
-            });
-        }
-        
-        // Animación de partículas
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                
-                ctx.fillStyle = p.color;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-                
-                // Mover partículas
-                p.x += p.speedX;
-                p.y += p.speedY;
-                
-                // Rebotar en los bordes
-                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-            }
-            
-            requestAnimationFrame(animateParticles);
-        }
-        
-        animateParticles();
-        
-        // Redimensionar canvas al cambiar tamaño de ventana
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
+        }, 100);
 
         // Smooth scrolling para enlaces de navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1521,10 +1250,18 @@
                 const screenPosition = window.innerHeight / 1.3;
                 
                 if (elementPosition < screenPosition) {
-                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
                 }
             });
         };
+
+        // Configurar elementos para animación
+        document.querySelectorAll('.feature-card, .battle-pass-item, .news-card, .stat-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(50px)';
+            element.style.transition = 'all 0.6s ease-out';
+        });
 
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
