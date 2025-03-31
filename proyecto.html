@@ -14,10 +14,11 @@
             --primary: #00C7FF;
             --secondary: #FF4655;
             --accent: #FFD700;
-            --dark: #0F1923;
+            --dark: #0A0A0A;  /* Más oscuro */
+            --darker: #050505; /* Nuevo tono más oscuro */
             --light: #FFFFFF;
-            --gray: #2A2A2A;
-            --section-bg: #121C25;
+            --gray: #1A1A1A;  /* Más oscuro */
+            --section-bg: #0D0D0D; /* Más oscuro */
         }
         
         * {
@@ -28,7 +29,7 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--dark);
+            background: var(--darker);
             color: var(--light);
             overflow-x: hidden;
         }
@@ -41,7 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 25, 35, 0.9);
+            background: rgba(10, 10, 10, 0.95);
             padding: 15px 5%;
             z-index: 1000;
             backdrop-filter: blur(10px);
@@ -106,7 +107,7 @@
 
         .btn-download {
             background: var(--primary);
-            color: var(--dark);
+            color: var(--darker);
             padding: 10px 25px;
             border-radius: 4px;
             font-weight: bold;
@@ -123,18 +124,49 @@
             box-shadow: 0 5px 15px rgba(0, 199, 255, 0.4);
         }
 
-        /* Hero Section */
+        /* Hero Section con slider */
         .hero {
             width: 100%;
             height: 100vh;
             min-height: 800px;
-            background: 
-                linear-gradient(to bottom, rgba(15, 25, 35, 0.4), rgba(15, 25, 35, 0.9)),
-                url('https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
             display: flex;
             align-items: center;
             padding: 0 5%;
-            margin-top: 70px;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .slide1 {
+            background: 
+                linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.9)),
+                url('https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
+        }
+
+        .slide2 {
+            background: 
+                linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.9)),
+                url('https://cdn2.unrealengine.com/fortnite-battle-pass-chapter-5-season-3-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
+        }
+
+        .slide3 {
+            background: 
+                linear-gradient(to bottom, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.9)),
+                url('https://cdn2.unrealengine.com/fortnite-collab-marvel-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
         }
 
         .hero-content {
@@ -168,7 +200,7 @@
 
         .btn-primary {
             background: var(--primary);
-            color: var(--dark);
+            color: var(--darker);
             padding: 15px 35px;
             border-radius: 4px;
             font-weight: bold;
@@ -208,6 +240,31 @@
             transform: translateY(-3px);
         }
 
+        /* Slider controls */
+        .slider-controls {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
         /* News Section */
         .section-title {
             font-family: 'Anton', sans-serif;
@@ -234,6 +291,8 @@
         .news-section {
             background: var(--section-bg);
             padding: 80px 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .news-grid {
@@ -251,17 +310,20 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .news-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: var(--primary);
         }
 
         .news-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            display: block;
         }
 
         .news-card .badge {
@@ -317,16 +379,33 @@
 
         /* Battle Pass Section */
         .battle-pass {
-            background: 
-                linear-gradient(to bottom, rgba(15, 25, 35, 0.8), rgba(15, 25, 35, 0.9)),
-                url('https://cdn2.unrealengine.com/fortnite-battle-pass-chapter-5-season-3-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
+            background: var(--darker);
             padding: 100px 5%;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .battle-pass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                url('https://cdn2.unrealengine.com/fortnite-battle-pass-chapter-5-season-3-3840x2160-3840x2160-3a5c9be6a4a7.jpg') no-repeat center center/cover;
+            opacity: 0.3;
+            z-index: 0;
         }
 
         .battle-pass-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .battle-pass h2 {
@@ -349,6 +428,7 @@
         .featured-section {
             background: var(--section-bg);
             padding: 80px 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .featured-grid {
@@ -367,12 +447,14 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
             padding: 30px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .featured-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(145deg, #121C25, #0F1923);
+            background: linear-gradient(145deg, #121212, #0A0A0A);
+            border-color: var(--primary);
         }
 
         .featured-item i {
@@ -395,7 +477,7 @@
 
         /* Footer */
         .footer {
-            background: #0A121A;
+            background: #050505;
             padding: 60px 5% 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -484,6 +566,10 @@
             .section-title {
                 font-size: 2.5rem;
             }
+            
+            .battle-pass h2 {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -520,6 +606,10 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .battle-pass h2 {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -528,7 +618,11 @@
             }
             
             .battle-pass h2 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -538,7 +632,7 @@
     <!-- Header -->
     <header class="header">
         <div class="logo">
-            <img src="https://cdn2.unrealengine.com/fortnite-favicon-2018-244x244-c6c0e7f8c9c0.png" alt="Fortnite Logo">
+            <img src="https://cdn2.unrealengine.com/fortnite-favicon-2018-244x244-c6c0e7f8c9c0.png" alt="Fortnite Logo" onerror="this.src='fortnite-logo.png'">
             <span class="logo-text">FORTNITE</span>
         </div>
         <nav class="nav-links">
@@ -547,24 +641,61 @@
             <a href="#">Noticias</a>
             <a href="#">Eventos</a>
             <a href="#">Competitivo</a>
-            <a href="#">Guías</a>
             <button class="btn-download">Jugar Gratis</button>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Slider -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>CHAPTER 5 - SEASON 3</h1>
-            <p>Sumérgete en el desierto postapocalíptico con el nuevo Pase de Batalla lleno de recompensas, vehículos modificados y armas devastadoras.</p>
-            <div class="hero-buttons">
-                <a href="https://www.epicgames.com/fortnite" class="btn-primary">
-                    <i class="fas fa-download"></i> Descargar Gratis
-                </a>
-                <a href="#" class="btn-secondary">
-                    <i class="fas fa-play"></i> Ver Tráiler
-                </a>
+        <div class="hero-slide slide1 active">
+            <div class="hero-content">
+                <h1>CHAPTER 5 - SEASON 3</h1>
+                <p>Sumérgete en el desierto postapocalíptico con el nuevo Pase de Batalla lleno de recompensas, vehículos modificados y armas devastadoras.</p>
+                <div class="hero-buttons">
+                    <a href="https://www.epicgames.com/fortnite" class="btn-primary">
+                        <i class="fas fa-download"></i> Descargar Gratis
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-play"></i> Ver Tráiler
+                    </a>
+                </div>
             </div>
+        </div>
+        
+        <div class="hero-slide slide2">
+            <div class="hero-content">
+                <h1>NUEVO BATTLE PASS</h1>
+                <p>Desbloquea más de 100 recompensas incluyendo 8 skins exclusivas, pickaxes, gestos y mucho más. Juega para subir de nivel y ganar V-Bucks.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Comprar Ahora
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-info-circle"></i> Ver Recompensas
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-slide slide3">
+            <div class="hero-content">
+                <h1>COLABORACIÓN MARVEL</h1>
+                <p>Los Vengadores regresan a Fortnite con nuevas skins, armas míticas y un evento especial que cambiará la isla para siempre.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">
+                        <i class="fas fa-star"></i> Ver Skins
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Fechas del Evento
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
         </div>
     </section>
 
@@ -573,7 +704,7 @@
         <h2 class="section-title">Últimas Noticias</h2>
         <div class="news-grid">
             <article class="news-card">
-                <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Nueva Temporada">
+                <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Nueva Temporada" onerror="this.src='season3.jpg'">
                 <span class="badge">Actualización</span>
                 <div class="news-content">
                     <span class="news-date">Junio 15, 2025</span>
@@ -584,7 +715,7 @@
             </article>
             
             <article class="news-card">
-                <img src="https://cdn2.unrealengine.com/fortnite-collab-marvel-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Colaboración Marvel">
+                <img src="https://cdn2.unrealengine.com/fortnite-collab-marvel-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Colaboración Marvel" onerror="this.src='marvel-collab.jpg'">
                 <span class="badge">Colaboración</span>
                 <div class="news-content">
                     <span class="news-date">Junio 10, 2025</span>
@@ -595,7 +726,7 @@
             </article>
             
             <article class="news-card">
-                <img src="https://cdn2.unrealengine.com/fortnite-tournament-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Torneo">
+                <img src="https://cdn2.unrealengine.com/fortnite-tournament-3840x2160-3840x2160-3a5c9be6a4a7.jpg" alt="Torneo" onerror="this.src='tournament.jpg'">
                 <span class="badge">Competitivo</span>
                 <div class="news-content">
                     <span class="news-date">Junio 5, 2025</span>
@@ -704,7 +835,50 @@
         </div>
     </footer>
 
+    <script>
+        // Slider automático
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        // Cambiar slide cada 5 segundos
+        setInterval(nextSlide, 5000);
+        
+        // Control manual con dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Fallback para imágenes
+        function checkImages() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.complete || img.naturalWidth === 0) {
+                    const fallback = img.getAttribute('onerror');
+                    if (fallback) {
+                        img.src = fallback.split("'")[1];
+                    }
+                }
+            });
+        }
+        
+        window.addEventListener('load', checkImages);
+    </script>
+
 </body>
 </html>
-
-
