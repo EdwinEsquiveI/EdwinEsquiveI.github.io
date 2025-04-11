@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de tu Proyecto</title>
+
+    <!-- Fuentes y Estilos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS para el carrusel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <style>
+        :root {
+            --fondo: #0a0a0a;
+            --texto: #ffffff;
+            --acento: #00a8ff;
+            --sombra: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px;
+            background-color: #121212;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Burbank Big Condensed', sans-serif;
+            font-size: 2rem;
+            color: var(--acento);
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: var(--texto);
+            text-decoration: none;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background-color: var(--acento);
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0078c8;
+        }
+
+        footer {
+            background-color: #181818;
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--texto);
+        }
+
+        :root {
+        --fondo: #0a0a0a;
+        --texto: #ffffff;  
+        --acento: #00a8ff;
+        --sombra: rgba(0, 0, 0, 0.3);
+        }
+
+
+        #redes-sociales {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: #121212;
+        max-width: 1200px;
+        margin: auto;
+        }
+
+        #redes-sociales h2 {
+        font-size: 2rem;
+        color: var(--acento);
+        margin-bottom: 40px;
+        }
+
+        .redes-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        }
+
+        .red-social {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        flex: 1 1 350px;
+        max-width: 500px;
+        }
+
+        .social-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        color: var(--texto);
+        font-weight: bold;
+        font-size: 1.3rem;
+        }
+
+        .social-embed {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .red-social i {
+        font-size: 2rem;
+        }
+
+        /* Estilos para el carrusel */
+        .fortnite-carousel {
+            width: 100%;
+            position: relative;
+        }
+        
+        .fortnite-carousel .owl-carousel .item img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+        }
+        
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        
+        .owl-prev, .owl-next {
+            background: rgba(0, 168, 255, 0.7) !important;
+            color: white !important;
+            font-size: 2rem !important;
+            width: 50px;
+            height: 50px;
+            border-radius: 50% !important;
+            margin: 0 20px;
+        }
+        
+        .owl-dots {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .owl-dot span {
+            background: white !important;
+        }
+        
+        .owl-dot.active span {
+            background: var(--acento) !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fortnite</h1>
+        <nav>
+            <a href="proyecto.html">Inicio</a>
+            <a href="referencias.html">Referencias</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <div class="fortnite-carousel">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="images/image1.jpg" alt="Fortnite Temporada 5">
+            </div>
+            <div class="item">
+                <img src="/images/image2.jpg" alt="Fortnite Battle Royale">
+            </div>
+            <div class="item">
+                <img src="images/image3.jpg" alt="Fortnite Nuevo Mapa">
+            </div>
+            <div class="item">
+                <img src="images/image4.jpg" alt="Fortnite Skins">
+            </div>
+            <div class="item">
+                <img src="images/images5.jpg" alt="Fortnite Evento">
+            </div>
+        </div>
+    </div>
+
+<!-- Sección Redes Sociales -->
+<section id="redes-sociales">
+    <h2>Sigue a Fortnite en sus redes sociales oficiales!</h2>
+  
+    <div class="redes-container">
+  
+      <!-- TikTok -->
+      <div class="red-social">
+        <div class="social-header">
+          <i class="fab fa-tiktok"></i> TikTok
+        </div>
+        <div class="social-embed">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@fortnite" data-unique-id="fortnite" data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
+            <section><a target="_blank" href="https://www.tiktok.com/@fortnite?refer=creator_embed">@fortnite</a></section>
+          </blockquote>
+          <script async src="https://www.tiktok.com/embed.js"></script>
+        </div>
+      </div>
+  
+      <!-- Facebook -->
+      <div class="red-social">
+        <div class="social-header">
+          <i class="fab fa-facebook"></i> Facebook
+        </div>
+        <div class="social-embed">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FFortniteES%2Fvideos%2F2514524352227562%2F&show_text=false&width=560&t=0" width="100%" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+      </div>
+  
+      <!-- Instagram -->
+      <div class="red-social">
+        <div class="social-header">
+          <i class="fab fa-instagram"></i> Instagram
+        </div>
+        <div class="social-embed">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DIL0l4tgdYe/" data-instgrm-version="14" style="width:100%; max-width:540px; margin:auto;"></blockquote>
+          <script async src="https://www.instagram.com/embed.js"></script>
+        </div>
+      </div>
+  
+      <!-- Twitter -->
+      <div class="red-social">
+        <div class="social-header">
+          <i class="fab fa-twitter"></i> Twitter
+        </div>
+        <div class="social-embed">
+          <blockquote class="twitter-tweet"><p lang="en" dir="ltr">shout out to all my fellow Sabrinas line dancing in party royale 💖 <a href="https://t.co/JtHdn8fDuI">pic.twitter.com/JtHdn8fDuI</a></p>&mdash; Fortnite (@Fortnite) <a href="https://twitter.com/Fortnite/status/1910041177492971978?ref_src=twsrc%5Etfw">April 9, 2025</a></blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <!-- Scripts para el carrusel -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $(".owl-carousel").owlCarousel({
+              items: 1,
+              loop: true,
+              autoplay: true,
+              autoplayTimeout: 3000,  // Cambiado a 3 segundos (3000ms)
+              autoplaySpeed: 1000,     // Velocidad de transición más rápida (1 segundo)
+              autoplayHoverPause: true,
+              nav: true,
+              dots: true,
+              animateOut: 'fadeOut',
+              animateIn: 'fadeIn',
+              smartSpeed: 800           // Velocidad de la animación
+          });
+      });
+  </script>
+</body>
+</html>
