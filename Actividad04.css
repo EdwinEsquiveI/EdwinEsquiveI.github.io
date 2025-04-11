@@ -1,88 +1,82 @@
 <style>
 h1 {
-    border: 3px solid #ff00aa; /* magenta neón */
+    border: 3px solid #2e7d32; /* verde oscuro */
     font-family: "Alegreya Sans SC", sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     font-style: italic;
-    color: #ff00aa;
-    background-color: #121212; /* negro profundo */
+    color: #1b5e20;
+    background-color: #e8f5e9; /* verde claro */
     padding: 12px;
-    text-shadow: 0 0 8px #ff00aa;
-    letter-spacing: 2px;
+    text-shadow: none;
+    letter-spacing: 1px;
+    border-radius: 8px;
 }
 
 ul {
-    border: 4px double #00ffcc; /* turquesa neón */
+    border: 2px solid #5d4037; /* marrón */
     padding: 15px;
-    background-color: #222222; /* gris oscuro */
-    color: #00ffcc;
-    box-shadow: 0 0 15px #00ffcc;
-    border-radius: 5px;
+    background-color: #efebe9; /* beige claro */
+    color: #3e2723;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
 li {
-    border: 3px dotted #ff5500; /* naranja neón */
+    border: 1px dashed #6d4c41; /* marrón medio */
     margin-bottom: 8px;
     padding: 8px;
-    background-color: #1a1a1a;
-    color: #ff9966;
-    border-radius: 3px;
+    background-color: #f5f5f5;
+    color: #4e342e;
+    border-radius: 4px;
+    list-style-type: square;
 }
 
 p {
-    border-radius: 15px;
-    border: 3px solid #aa00ff; /* púrpura neón */
-    background-color: #0f0f0f;
-    color: #f0f0f0;
+    border-radius: 8px;
+    border: 2px solid #0277bd; /* azul */
+    background-color: #e3f2fd;
+    color: #01579b;
     padding: 15px;
     margin: 15px 0;
-    box-shadow: 0 0 12px #aa00ff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     line-height: 1.6;
 }
 
 body {
-    background-color: #000000;
-    background-image: url("matrix-code.gif");
-    background-size: 200px;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-attachment: fixed;
-    font-family: "Rajdhani", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    color: #e0e0e0;
+    background-color: #ffffff;
+    background-image: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #212121;
+    padding: 20px;
 }
 
 a {
-    color: #00ff88;
+    color: #d84315; /* naranja oscuro */
     text-decoration: none;
     padding: 6px 12px;
-    border: 2px groove #00ff88;
+    border: 1px solid #d84315;
     border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 8px #00ff88;
-    transition: all 0.4s ease;
-    font-weight: bold;
+    background-color: transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 a:hover {
-    background-color: #00ff88;
-    color: #000000;
-    box-shadow: 0 0 20px #00ff88;
-    transform: scale(1.05);
+    background-color: #d84315;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Efectos adicionales */
+/* Efectos de hover suaves */
 h1:hover {
-    animation: glow 1s infinite alternate;
+    background-color: #c8e6c9;
+    transition: background-color 0.3s ease;
 }
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 8px #ff00aa;
-    }
-    to {
-        text-shadow: 0 0 15px #ff00aa, 0 0 25px #ff00aa;
-    }
+ul:hover {
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease;
 }
 </style>
