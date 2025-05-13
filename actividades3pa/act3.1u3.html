@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unidad 3 | Actividad 03-1</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #eee;
+    }
+    .cyan {
+      background-color: #00dfff;
+    }
+    tr:hover {
+      background-color: #ff0080;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Unidad 3 | Actividad 03-1 :: Tema (JavaScript)</h1>
+
+  <script>
+    // Solicitar valores al usuario
+    let base = Number(prompt("¿De qué número quieres la tabla? 1 - 10"));
+    let cantidad = Number(prompt("¿Cuántos valores deseas mostrar? 1 - 100"));
+
+    // Validaciones simples
+    if (isNaN(base) || isNaN(cantidad) || base <= 0 || cantidad <= 0) {
+      document.write("<p>Por favor, ingresa valores válidos mayores a cero.</p>");
+    } else {
+      document.write('<table>');
+      document.write('<tr><th>No.</th><th>Suma</th><th>Multiplica</th></tr>');
+
+      for (let i = 1; i <= cantidad; i++) {
+        let suma = base + i;
+        let multiplica = base * i;
+
+        let clase = (i % 2 !== 0) ? 'cyan' : '';
+
+        document.write('<tr class="' + clase + '">');
+        document.write('<td>' + i + '</td>');
+        document.write('<td>' + base + ' + ' + i + ' = ' + suma + '</td>');
+        document.write('<td>' + base + ' × ' + i + ' = ' + multiplica + '</td>');
+        document.write('</tr>');
+      }
+
+      document.write('</table>');
+    }
+  </script>
+</body>
+</html>
