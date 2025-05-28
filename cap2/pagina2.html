@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Temporada 2 | Fortnite</title>
+  <link rel="icon" type="image/x-icon" href="../Fortnite.ico">
+  <!-- Fuentes y Estilos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Paleta de colores ORIGINAL de Fortnite */
+    :root {
+      --black: #0A0A0A;
+      --dark: #121212;
+      --darker: #080808;
+      --darkest: #050505;
+      --light: #FFFFFF;
+      --primary: #00C8FF;
+      --accent: #FFD700;
+      --card-bg: #181818;
+      --header-bg: rgba(10, 10, 10, 0.98);
+      --border: 1px solid rgba(0, 200, 255, 0.1);
+      --border-hover: 1px solid var(--primary);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 15px 35px rgba(0, 200, 255, 0.15);
+      --fortnite-gradient: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+    
+    /* Reset y Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--light);
+      line-height: 1.7;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+    }
+    
+    /* Tipografía Fortnite */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Burbank Big Condensed', sans-serif;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .fortnite-gradient-text {
+      background: var(--fortnite-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* Header estilo Fortnite */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--header-bg);
+      padding: 15px 5%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .logo-text {
+      font-size: 2rem;
+      color: var(--primary);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    nav a {
+      color: var(--light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 0;
+      position: relative;
+      letter-spacing: 1.5px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    /* Estilos del título */
+    h1 {
+      font-size: 4rem;
+      font-family: 'Burbank Big Condensed', sans-serif;
+      background: linear-gradient(135deg, #00C8FF, #FFD700);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(0, 200, 255, 0.5);
+    }
+    
+    /* Contenedor para el título */
+    .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      height: 50vh;
+    }
+    
+    /* Estilos para el Contenedor de Texto */
+    .text-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(24, 24, 24, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 200, 255, 0.2);
+      text-align: center;
+    }
+    
+    .text-container p {
+      font-size: 1.2rem;
+      color: white;
+      line-height: 1.6;
+    }
+    
+    /* Footer estilo Fortnite */
+    footer {
+      background-color: var(--darker);
+      color: var(--light);
+      padding: 80px 5% 40px;
+      position: relative;
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--fortnite-gradient);
+    }
+    
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+      line-height: 1.7;
+      text-align: center;
+    }
+    
+    /* Estilos para las secciones de temporada */
+    .season-nav {
+      background-color: var(--darker);
+      padding: 15px 0;
+      position: sticky;
+      top: 80px;
+      z-index: 900;
+      border-bottom: var(--border);
+    }
+    
+    .season-nav-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .season-nav-item {
+      color: var(--light);
+      padding: 8px 20px;
+      border-radius: 20px;
+      background: rgba(0, 200, 255, 0.1);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .season-nav-item:hover {
+      background: var(--primary);
+      color: var(--black);
+      transform: translateY(-3px);
+    }
+    
+    .season-section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .section-title {
+      font-size: 4rem;
+      margin-bottom: 65px;
+      color: var(--primary);
+      position: relative;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      background: var(--fortnite-gradient);
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+    
+    .weapons-grid, .items-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      padding: 0 20px;
+    }
+    
+    .weapon-card, .item-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: var(--border);
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+    
+    .weapon-card:hover, .item-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border: var(--border-hover);
+    }
+    
+    .weapon-image, .item-image {
+      height: 150px;
+      background: var(--darker);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+    }
+    
+    .weapon-image img, .item-image img {
+      max-width: 80%;
+      max-height: 80%;
+    }
+    
+    .weapon-info, .item-info {
+      padding: 20px;
+    }
+    
+    .weapon-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+    
+    .weapon-stats span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: var(--border);
+    }
+    
+    .timeline-date {
+      color: var(--primary);
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .gallery-item {
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: var(--border);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .gallery-item p {
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      
+      nav {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .title-container {
+        height: 40vh;
+      }
+      
+      h1 {
+        font-size: 3rem;
+      }
+      
+      .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .season-nav-inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .text-container p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Estilos combinados y optimizados */
+    .patches-accordion {
+        max-width: 1000px;
+        margin: 40px auto;
+    }
+
+    .season-details {
+        margin-bottom: 15px;
+        border: 1px solid #00ccff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+    .season-summary {
+        padding: 15px 20px;
+        background: linear-gradient(90deg, var(--primary), #1a1a1a);
+        color: #00c8ff;
+        font-family: 'Burbank Big Condensed', sans-serif;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .season-summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .patches-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: var(--card-bg);
+    }
+
+    .patches-table th, 
+    .patches-table td {
+        padding: 15px 20px;
+        text-align: left;
+        border-bottom: 1px solid rgb(0, 204, 255, 0.3);
+    }
+
+    .patches-table th {
+        background-color: var(--primary);
+        color: #00c8ff;
+    }
+
+    .patches-table tr:hover {
+        background-color: rgb(0, 200, 255, 0.1);
+    }
+
+    .patches-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .season-summary,
+        .patches-table th, 
+        .patches-table td {
+            padding: 12px 15px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Fondo con efecto borroso */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("FORTCH1S2.jpg"); /* Imagen de fondo Temporada 2 */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(8px) brightness(1.4);
+      z-index: -2;
+    }
+
+    /* Ajuste para contenido principal */
+    body {
+      position: relative;
+    }
+
+    /* Mantener el gradiente radial existente como overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at center, var(--darker) 0%, var(--darkest) 100%);
+      opacity: 0.85;
+      z-index: -1;
+    }
+
+    /* Estilo para iframe */
+    .video-container {
+      width: fit-content;
+      max-width: 100%;
+      margin: 30px auto;
+      padding: 15px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .video-container iframe {
+      display: block;
+      width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* Versión responsive */
+    @media (max-width: 900px) {
+      .video-container iframe {
+        width: 600px;
+        height: 338px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .video-container iframe {
+        width: 100%;
+        height: calc(100vw * 0.5625);
+        max-width: 100%;
+      }
+    }
+
+    /* Estilos para la sección de colaboraciones */
+    .collaborations-section {
+      padding: 80px 0;
+    }
+
+    .collab-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      border: var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .collab-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border: var(--border-hover);
+    }
+
+    .collab-info h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .collab-info p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+    }
+
+    /* Ajustes responsive para la sección */
+    @media (max-width: 768px) {
+      .collaborations-section .row {
+        flex-direction: column;
+      }
+      
+      .collaborations-section .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+      }
+      
+      .collab-card {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="logo-text">FORTNITE</span>
+    </div>
+    <nav>
+      <a href="../proyecto.html">Inicio</a>
+      <a href="../referencias.html">Referencias</a>
+      <a href="../contacto.html">Contacto</a>
+      <a href="../contenido.html">Contenido</a>
+    </nav>
+  </header>
+
+  <div class="title-container">
+    <h1>Capítulo 1 - Temporada 2</h1>
+  </div>
+
+  <!-- Menú de navegación interna -->
+  <div class="season-nav">
+    <div class="container">
+      <div class="season-nav-inner">
+        <a href="#historia" class="season-nav-item">Historia</a>
+        <a href="#armas" class="season-nav-item">Armas</a>
+        <a href="#objetos" class="season-nav-item">Consumibles</a>
+        <a href="#eventos" class="season-nav-item">Eventos</a>
+        <a href="#galeria" class="season-nav-item">Galería</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Historia -->
+  <section id="historia" class="season-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Historia de la Temporada 2</h2>
+      <div class="text-container">
+        <p>La Temporada 2 de Fortnite (Diciembre 2017 - Febrero 2018) marcó un hito al introducir el primer Pase de Batalla con el tema "Caballeros vs Bandidos". Esta temporada revolucionó el juego con:</p>
+        <ul style="list-style-position: inside; text-align: center; padding-left: 0;">
+          <li>El icónico aspecto del Caballero Negro como recompensa final</li>
+          <li>Nuevas mecánicas de construcción mejoradas</li>
+          <li>Introducción de misiones semanales</li>
+          <li>Primeros eventos limitados de temporada</li>
+        </ul>
+        <p>El mapa recibió pequeñas modificaciones, destacando la introducción de Tilted Towers, que rápidamente se convirtió en el lugar más popular y caótico del juego.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="video-container">
+    <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/WJW-bzXZM8M?playlist=WJW-bzXZM8M&loop=0&autoplay=0&mute=1&controls=1&modestbranding=1&disablekb=1&fs=0&rel=0" 
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Sección de Armas -->
+  <section id="armas" class="season-section weapons-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Armas de la Temporada 2</h2>
+      <div class="weapons-grid">
+        <!-- Fusil SCAR -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="cap2\Scar.webp" alt="Fusil SCAR">
+          </div>
+          <div class="weapon-info">
+            <h3>Fusil SCAR</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 35</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 5.5</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 30</span>
+            </div>
+            <p>Nueva variante épica/legendaria introducida en esta temporada, más precisa que el fusil estándar.</p>
+          </div>
+        </div>
+        
+        <!-- Minigun -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="minigun_s2.jpg" alt="Minigun">
+          </div>
+          <div class="weapon-info">
+            <h3>Minigun</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 18</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 12</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: ∞</span>
+            </div>
+            <p>Arma nueva en esta temporada, perfecta para destruir estructuras enemigas.</p>
+          </div>
+        </div>
+
+        <!-- Lanzacohetes -->
+        <div class="weapon-card">
+          <div class="weapon-image">
+            <img src="rocket_s2.jpg" alt="Lanzacohetes">
+          </div>
+          <div class="weapon-info">
+            <h3>Lanzacohetes</h3>
+            <div class="weapon-stats">
+              <span><i class="fas fa-bolt"></i> Daño: 110</span>
+              <span><i class="fas fa-tachometer-alt"></i> Cadencia: 0.8</span>
+              <span><i class="fas fa-database"></i> Tamaño de cargador: 1</span>
+            </div>
+            <p>Arma devastadora añadida en esta temporada, capaz de destruir estructuras fácilmente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Consumibles -->
+  <section id="objetos" class="season-section items-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Consumibles Temporada 2</h2>
+      <div class="items-grid">
+        <!-- Chug Jug -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="chugjug_s2.jpg" alt="Chug Jug">
+          </div>
+          <div class="item-info">
+            <h3>Chug Jug</h3>
+            <p>Nuevo en esta temporada, cura completamente salud y escudo pero tarda 15 segundos en consumirse.</p>
+          </div>
+        </div>
+        
+        <!-- Cohetes -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="rocket_ammo_s2.jpg" alt="Cohetes">
+          </div>
+          <div class="item-info">
+            <h3>Cohetes</h3>
+            <p>Municiones exclusivas para el lanzacohetes, añadidas en esta temporada.</p>
+          </div>
+        </div>
+        
+        <!-- Granadas -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="grenade_s2.jpg" alt="Granadas">
+          </div>
+          <div class="item-info">
+            <h3>Granadas</h3>
+            <p>Explosivos básicos pero efectivos, especialmente contra estructuras.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="parches" class="season-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Actualizaciones Temporada 2</h2>
+      
+      <div class="patches-accordion">
+        <!-- Temporada 2 -->
+        <details class="season-details">
+          <summary class="season-summary">Temporada 2 (Diciembre 2017 - Febrero 2018)</summary>
+          <div class="patches-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Versión</th>
+                  <th>Fecha</th>
+                  <th>Cambios Importantes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>v2.0.0</td>
+                  <td>14/12/2017</td>
+                  <td>Lanzamiento del Pase de Batalla</td>
+                </tr>
+                <tr>
+                  <td>v2.1.0</td>
+                  <td>11/01/2018</td>
+                  <td>Nueva arma: Minigun</td>
+                </tr>
+                <tr>
+                  <td>v2.2.0</td>
+                  <td>18/01/2018</td>
+                  <td>Introducción de Tilted Towers</td>
+                </tr>
+                <tr>
+                  <td>v2.4.0</td>
+                  <td>01/02/2018</td>
+                  <td>Evento de San Valentín</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Galería -->
+  <section id="galeria" class="season-section gallery-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Galería</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="map_s2.jpg" alt="Mapa Temporada 2">
+          <p>Mapa de la Temporada 2 con nuevas ubicaciones</p>
+        </div>
+        <div class="gallery-item">
+          <img src="battlepass_s2.jpg" alt="Pase de Batalla">
+          <p>Primer Pase de Batalla de Fortnite</p>
+        </div>
+        <div class="gallery-item">
+          <img src="knight_s2.jpg" alt="Caballero Negro">
+          <p>Aspecto del Caballero Negro (Recompensa final)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Eventos -->
+  <section id="eventos" class="season-section events-section">
+    <div class="container">
+      <h2 class="section-title fortnite-gradient-text">Eventos Temporada 2</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">14 Dic 2017</div>
+          <div class="timeline-content">
+            <h3>Lanzamiento Pase de Batalla</h3>
+            <p>Introducción del primer Pase de Batalla con tema medieval.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">18 Ene 2018</div>
+          <div class="timeline-content">
+            <h3>Nueva Ubicación: Tilted Towers</h3>
+            <p>Se añade la zona más popular y caótica del juego.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">01 Feb 2018</div>
+          <div class="timeline-content">
+            <h3>Evento de San Valentín</h3>
+            <p>Decoraciones temáticas y nuevo objeto: Granadas de Cariño.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Fortnite Fansite. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
