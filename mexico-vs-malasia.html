@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>México vs. Malasia · Evaluación macroeconómica comparativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7fb;--surf:#fff;--surf2:#eef2f8;--tx:#0f172a;--mut:#5b6b82;--bd:#dbe3ef;--mx:#0284c7;--my:#059669;--warn:#d97706;--acc:#7c3aed;--sh:0 10px 30px rgba(15,23,42,.08);
+--hero:radial-gradient(900px 400px at 15% -10%,rgba(2,132,199,.18),transparent),radial-gradient(800px 400px at 95% 0,rgba(5,150,105,.16),transparent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#060b17;--surf:#0e1627;--surf2:#152036;--tx:#e8eef9;--mut:#93a3bd;--bd:#1f2d47;--mx:#38bdf8;--my:#34d399;--warn:#fbbf24;--acc:#a78bfa;--sh:0 20px 50px rgba(0,0,0,.5);--hero:radial-gradient(900px 400px at 15% -10%,rgba(56,189,248,.16),transparent),radial-gradient(800px 400px at 95% 0,rgba(52,211,153,.13),transparent)}}
+:root[data-theme="dark"]{--bg:#060b17;--surf:#0e1627;--surf2:#152036;--tx:#e8eef9;--mut:#93a3bd;--bd:#1f2d47;--mx:#38bdf8;--my:#34d399;--warn:#fbbf24;--acc:#a78bfa;--sh:0 20px 50px rgba(0,0,0,.5);--hero:radial-gradient(900px 400px at 15% -10%,rgba(56,189,248,.16),transparent),radial-gradient(800px 400px at 95% 0,rgba(52,211,153,.13),transparent)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(90px + env(safe-area-inset-top,0px))}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{background:var(--bg);background-image:var(--hero);background-repeat:no-repeat;color:var(--tx);font:15px/1.65 'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:60}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--surf) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--mx)}
+h1{font-size:clamp(18px,2.6vw,24px);font-weight:800;letter-spacing:-.02em}
+.formula{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--surf2);border:1px solid var(--bd);border-radius:10px;padding:7px 12px}
+button{font:inherit;cursor:pointer;color:inherit}
+.ic{background:var(--surf2);border:1px solid var(--bd);border-radius:10px;padding:7px 11px}
+#prog{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--mx),var(--my))}
+nav.sec{display:flex;gap:18px;font-size:13px;font-weight:600;color:var(--mut);padding-bottom:10px;overflow-x:auto}
+nav.sec a{color:inherit;text-decoration:none;white-space:nowrap}nav.sec a:hover{color:var(--tx)}
+main{padding:32px 0 60px;display:grid;gap:28px}
+.card{background:var(--surf);border:1px solid var(--bd);border-radius:22px;padding:28px;box-shadow:var(--sh)}
+.rv{opacity:0;transform:translateY(14px);transition:.6s}.rv.in{opacity:1;transform:none}
+h2{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+p.lead{color:var(--mut);max-width:80ch}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:18px}
+.country{background:var(--surf2);border:1px solid var(--bd);border-radius:16px;padding:18px}
+.country h3{font-size:16px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:20px}
+.kpi{background:var(--surf2);border:1px solid var(--bd);border-radius:16px;padding:16px}
+.kpi b{display:block;font-size:28px;font-weight:800;letter-spacing:-.03em}.kpi span{font-size:12px;color:var(--mut)}
+.tabs{display:flex;flex-wrap:wrap;gap:10px}
+.tab{padding:10px 16px;border-radius:12px;border:1px solid var(--bd);background:var(--surf);font-weight:700;font-size:13px;color:var(--mut);transition:.2s}
+.tab[aria-selected=true]{background:var(--mx);border-color:var(--mx);color:#fff;box-shadow:0 8px 20px color-mix(in srgb,var(--mx) 35%,transparent)}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0;align-items:center}
+.tools input{flex:1;min-width:200px;padding:10px 14px;border-radius:12px;border:1px solid var(--bd);background:var(--surf2);color:var(--tx);font:inherit}
+.chip{padding:7px 13px;border-radius:99px;border:1px solid var(--bd);background:var(--surf2);font-size:12px;font-weight:700;color:var(--mut)}
+.chip[aria-pressed=true]{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.tw{overflow-x:auto;border:1px solid var(--bd);border-radius:16px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
+th{background:var(--surf2);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-align:left;padding:12px 14px}
+td{padding:13px 14px;border-top:1px solid var(--bd);vertical-align:middle}
+tr:hover td{background:color-mix(in srgb,var(--surf2) 60%,transparent)}
+.code{font-family:ui-monospace,Menlo,monospace;font-weight:700;color:var(--mx)}
+.val{font-weight:700;font-variant-numeric:tabular-nums}.neg{color:#e11d48}
+.bar{height:6px;border-radius:9px;background:var(--surf2);margin-top:6px;overflow:hidden;min-width:110px}
+.bar i{display:block;height:100%;border-radius:9px;width:0;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.bm i{background:var(--mx)}.by i{background:var(--my)}
+.badge{font-size:11px;font-weight:800;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.b-a{background:color-mix(in srgb,var(--mx) 16%,transparent);color:var(--mx)}
+.b-b{background:color-mix(in srgb,var(--my) 16%,transparent);color:var(--my)}
+.b-n{background:var(--surf2);color:var(--mut)}
+.src{font-size:12px;color:var(--mut)}
+.score{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--surf2);margin:18px 0 8px}
+.score i{display:block;transition:width 1.2s cubic-bezier(.2,.8,.2,1);width:0}
+.comp{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:20px}
+.comp div{background:var(--surf2);border:1px solid var(--bd);border-radius:14px;padding:14px;font-size:13px}
+.comp b{font-size:20px;display:block}
+.bil{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:18px;text-align:center}
+.bil div{background:var(--surf2);border:1px solid var(--bd);border-radius:14px;padding:14px}
+.bil span{font-size:12px;color:var(--mut);display:block}.bil b{font-size:20px}
+details{border:1px solid var(--bd);border-radius:14px;padding:14px 18px;background:var(--surf2);margin-top:10px}
+summary{cursor:pointer;font-weight:700}details p{margin-top:8px;color:var(--mut);font-size:14px}
+footer{text-align:center;font-size:12px;color:var(--mut);padding:26px 20px;border-top:1px solid var(--bd)}
+.empty{padding:26px;text-align:center;color:var(--mut)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+@media print{header,.tools,#theme{display:none}.rv{opacity:1;transform:none}.card{box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="hd">
+   <div><div class="eyebrow">UASLP · Facultad de Contaduría y Administración</div><h1>Análisis macroeconómico: México vs. Malasia</h1></div>
+   <div style="display:flex;gap:10px;align-items:center"><div class="formula">Y = C + I + G + (X − M)</div><button class="ic" id="theme" aria-label="Cambiar tema">◐</button></div>
+  </div>
+  <nav class="sec"><a href="#intro">Planteamiento</a><a href="#datos">Indicadores</a><a href="#marcador">Marcador</a><a href="#veredicto">Veredicto</a><a href="#metodo">Metodología</a></nav>
+ </div>
+ <div id="prog"></div>
+</header>
+
+<main class="wrap">
+ <section class="card rv" id="intro">
+  <h2>Planteamiento y pregunta central</h2>
+  <p class="lead">¿Cuál economía nacional es mejor en la comparación entre México y Malasia? Se evalúa la función del ingreso nacional con los criterios de la FCA-UASLP, integrando consumo, inversión, gasto gubernamental y comercio exterior con apoyo de <strong>Trade Map (ITC)</strong>.</p>
+  <div class="grid2">
+   <div class="country"><h3 style="color:var(--mx)"><i class="dot" style="background:var(--mx)"></i>México (MEX): escala y mercado interno</h3><p class="src" style="font-size:14px">Mercado interno amplio y gran volumen exportador, pero con informalidad laboral de 54.3%, dependencia del mercado norteamericano (80.1%) y déficit comercial frente a economías asiáticas avanzadas.</p></div>
+   <div class="country"><h3 style="color:var(--my)"><i class="dot" style="background:var(--my)"></i>Malasia (MYS): alta tecnología y superávit</h3><p class="src" style="font-size:14px">Inserción en cadenas globales de semiconductores, superávit comercial (+5.57% del PIB), menor desigualdad y mayor inversión privada en I+D (1.4% del PIB).</p></div>
+  </div>
+  <div class="kpis" id="kpis"></div>
+ </section>
+
+ <section class="card rv" id="datos">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div style="margin-top:20px"><div class="eyebrow" id="tk"></div><h2 id="th"></h2><p class="lead" id="tp"></p></div>
+  <div class="tools">
+   <input id="q" type="search" placeholder="Buscar indicador o código (ej. Gini, XM03)…" aria-label="Buscar">
+   <button class="chip" data-f="all" aria-pressed="true">Todos</button>
+   <button class="chip" data-f="a" aria-pressed="false">Ventaja México</button>
+   <button class="chip" data-f="b" aria-pressed="false">Ventaja Malasia</button>
+  </div>
+  <div class="tw"><table><thead><tr><th>Código</th><th>Indicador</th><th>México</th><th>Malasia</th><th>Ventaja</th><th>Fuente</th></tr></thead><tbody id="tb"></tbody></table></div>
+  <div class="bil" id="bil" hidden>
+   <div><span>Malasia hacia México</span><b>$7,390 M USD</b></div>
+   <div><span>México hacia Malasia</span><b>$1,950 M USD</b></div>
+   <div><span>Saldo bilateral (déficit MEX)</span><b class="neg">− $5,440 M USD</b></div>
+  </div>
+ </section>
+
+ <section class="card rv" id="marcador">
+  <h2>Marcador comparativo</h2>
+  <p class="lead">Conteo automático de los indicadores con criterio de “mejor” definido (se excluyen los de tamaño o contexto, como remesas o gasto público total).</p>
+  <div class="score"><i id="sa" style="background:var(--mx)"></i><i id="sb" style="background:var(--my)"></i></div>
+  <div style="display:flex;justify-content:space-between;font-weight:700"><span style="color:var(--mx)">México: <span id="na">0</span></span><span style="color:var(--my)">Malasia: <span id="nb">0</span></span></div>
+  <div class="comp" id="comp"></div>
+ </section>
+
+ <section class="card rv" id="veredicto" style="text-align:center">
+  <h2>Veredicto y conclusión del trabajo final</h2>
+  <p class="lead" style="margin:auto">Aunque México tiene mayor tamaño nominal y gana en <strong>IED, volumen exportado y menor deuda pública</strong>, <strong style="color:var(--my)">Malasia presenta un desempeño macroeconómico superior</strong>: superávit comercial estructural (+5.57% del PIB), mercados más diversificados (15.5% vs. 80.1%), exportaciones de alta tecnología (52.8%), menor informalidad y mayor profundidad financiera.</p>
+ </section>
+
+ <section class="card rv" id="metodo">
+  <h2>Metodología y notas</h2>
+  <details><summary>¿Cómo se define la “ventaja”?</summary><p>Cada indicador tiene una dirección: más alto es mejor (inversión, exportaciones), o más bajo es mejor (Gini, informalidad, deuda). Los indicadores de escala se marcan como neutros.</p></details>
+  <details><summary>Marco legal citado</summary><p>La inversión se fundamenta en el Código de Comercio (Art. 16) y la LISR (Art. 2). El gasto programable representa 71.6% y el no programable 28.4%. La distribución sectorial del PIB de México es 4% primario, 33% secundario y 63% terciario.</p></details>
+  <details><summary>Estructura del gasto familiar en México (INEGI)</summary><p>Alimentos, bebidas y tabaco 34.1%, transporte 18.1%, vivienda 17.8%, salud 8.1%, educación 6.8% y vestido 4.5%.</p></details>
+  <details><summary>Aviso sobre los datos</summary><p>Las cifras provienen del trabajo original; verifica cada una y su año de referencia en Trade Map, INEGI, Banxico y el Banco Mundial antes de entregar.</p></details>
+ </section>
+</main>
+<footer>Universidad Autónoma de San Luis Potosí · FCA · Macroeconomía 2026</footer>
+
+<script>
+const T={c:{k:'Componente C · Familias',h:'I. Consumo privado y estructura del gasto familiar',p:'Las familias utilizan el dinero para satisfacer necesidades. Se comparan gasto, desigualdad, pobreza laboral, informalidad y remesas.',n:'I. Consumo (C)'},
+i:{k:'Componente I · Empresas',h:'II. Inversión y distribución del PIB',p:'La inversión la realizan los empresarios arriesgando capital. Se comparan formación de capital, IED, I+D, crédito y mercado bursátil.',n:'II. Inversión (I)'},
+g:{k:'Componente G · Gobierno',h:'III. Gasto gubernamental y finanzas públicas',p:'El gobierno usa el dinero para generar bienestar mediante Federación, Estado y Municipio. Se comparan gasto, recaudación, balance, deuda e intereses.',n:'III. Gobierno (G)'},
+xm:{k:'Componente X − M · Sector externo',h:'IV. Balanza comercial y Trade Map (ITC)',p:'Análisis con base en Trade Map, considerando fracciones arancelarias de la OMA y bloques comerciales.',n:'IV. Comercio (X − M)'}};
+// w: h = más alto es mejor, l = más bajo es mejor, null = neutro
+const D=[
+{t:'c',id:'C01',n:'Gasto de consumo final de los hogares (% PIB)',a:68.2,b:59.8,f:'p',w:null,s:'INEGI / Banco Mundial'},
+{t:'c',id:'C02',n:'Gasto en alimentos, bebidas y tabaco (% del gasto)',a:34.1,b:23.4,f:'p',w:'l',s:'ENIGH / DOSM'},
+{t:'c',id:'C15',n:'Coeficiente de Gini (0–100)',a:43.5,b:36.9,f:'g',w:'l',s:'CONEVAL / Banco Mundial'},
+{t:'c',id:'C16',n:'Hogares en pobreza laboral (%)',a:35.8,b:5.6,f:'p',w:'l',s:'CONEVAL / DOSM'},
+{t:'c',id:'C21',n:'Tasa de informalidad laboral (%)',a:54.3,b:26.8,f:'p',w:'l',s:'ENOE / DOSM'},
+{t:'c',id:'C36',n:'Remesas familiares anuales (millones USD)',a:63313,b:1850,f:'m',w:null,s:'Banxico / BNM'},
+{t:'i',id:'I01',n:'Formación bruta de capital fijo público (% PIB)',a:2.8,b:4.1,f:'p',w:'h',s:'SCNM / MOF'},
+{t:'i',id:'I19',n:'Inversión extranjera directa total (millones USD)',a:36058,b:18500,f:'m',w:'h',s:'Sec. Economía / MIDA'},
+{t:'i',id:'I28',n:'Inversión privada en I+D (% PIB)',a:0.3,b:1.4,f:'p',w:'h',s:'CONAHCYT / MOSTI'},
+{t:'i',id:'I39',n:'Crédito bancario al sector privado (% PIB)',a:28.5,b:122.4,f:'p',w:'h',s:'Banxico / BNM'},
+{t:'i',id:'I41',n:'Capitalización bursátil (% PIB)',a:34.2,b:114.8,f:'p',w:'h',s:'BMV / Bursa Malaysia'},
+{t:'g',id:'G01',n:'Gasto público total (% PIB)',a:30.2,b:24.8,f:'p',w:null,s:'SHCP / MOF'},
+{t:'g',id:'G11',n:'Ingresos tributarios totales (millones USD equiv.)',a:262000,b:58000,f:'m',w:null,s:'SAT / LHDN'},
+{t:'g',id:'G34',n:'Balance fiscal (% PIB)',a:-4.9,b:-4.3,f:'p',w:'h',s:'Banxico / BNM'},
+{t:'g',id:'G38',n:'Deuda pública bruta (% PIB)',a:52.8,b:64.2,f:'p',w:'l',s:'SHCP / BNM'},
+{t:'g',id:'G41',n:'Costo financiero de la deuda (% PIB)',a:3.7,b:2.6,f:'p',w:'l',s:'SHCP / MOF'},
+{t:'xm',id:'XM01',n:'Exportaciones de bienes y servicios (millones USD)',a:612189,b:352100,f:'m',w:'h',s:'Trade Map (ITC)'},
+{t:'xm',id:'XM02',n:'Importaciones de bienes y servicios (millones USD)',a:621300,b:328600,f:'m',w:null,s:'Trade Map (ITC)'},
+{t:'xm',id:'XM03',n:'Saldo de la balanza comercial (X − M, millones USD)',a:-9111,b:23500,f:'m',w:'h',s:'Trade Map (ITC)'},
+{t:'xm',id:'XM05',n:'Apertura comercial (X+M)/PIB (%)',a:66.3,b:161.3,f:'p',w:'h',s:'Trade Map / Banco Mundial'},
+{t:'xm',id:'XM18',n:'Exportaciones de alta tecnología (%)',a:21.5,b:52.8,f:'p',w:'h',s:'Trade Map / Banco Mundial'},
+{t:'xm',id:'XM29',n:'Concentración en socio principal (% exportaciones)',a:80.1,b:15.5,f:'p',w:'l',s:'Trade Map (EE. UU. / Singapur)'}];
+const $=s=>document.querySelector(s),nf=new Intl.NumberFormat('es-MX');
+const fmt=(v,f)=>{const s=v<0?'−':'';v=Math.abs(v);return f==='m'?s+'$'+nf.format(v)+' M':f==='g'?s+v+' pts':s+v+'%'};
+const win=d=>{if(!d.w||d.a===d.b)return null;const a=d.w==='h'?d.a>d.b:d.a<d.b;return a?'a':'b'};
+let tab='c',flt='all',q='';
+function renderTabs(){$('#tabs').innerHTML=Object.keys(T).map(k=>`<button class="tab" role="tab" data-t="${k}" aria-selected="${k===tab}">${T[k].n}</button>`).join('')}
+function renderTable(){
+ const t=T[tab];$('#tk').textContent=t.k;$('#th').textContent=t.h;$('#tp').textContent=t.p;
+ const rows=D.filter(d=>d.t===tab&&(flt==='all'||win(d)===flt)&&(d.id+d.n).toLowerCase().includes(q));
+ $('#tb').innerHTML=rows.length?rows.map(d=>{const w=win(d),m=Math.max(Math.abs(d.a),Math.abs(d.b));
+  const cell=(v,c)=>`<td><span class="val ${v<0?'neg':''}">${fmt(v,d.f)}</span><div class="bar ${c}"><i data-w="${Math.abs(v)/m*100}"></i></div></td>`;
+  return `<tr><td class="code">${d.id}</td><td>${d.n}</td>${cell(d.a,'bm')}${cell(d.b,'by')}<td><span class="badge ${w==='a'?'b-a':w==='b'?'b-b':'b-n'}">${w==='a'?'México':w==='b'?'Malasia':'Neutro'}</span></td><td class="src">${d.s}</td></tr>`}).join(''):'<tr><td colspan="6" class="empty">Sin resultados para este filtro.</td></tr>';
+ $('#bil').hidden=tab!=='xm';
+ requestAnimationFrame(()=>setTimeout(()=>document.querySelectorAll('#tb .bar i').forEach(i=>i.style.width=i.dataset.w+'%'),30));
+}
+function count(el,to,dec=0,suf=''){let s=null;const step=ts=>{s=s||ts;const p=Math.min((ts-s)/1100,1);el.textContent=(to*(1-Math.pow(1-p,3))).toFixed(dec)+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+function scoreboard(){
+ let a=0,b=0,html='';
+ Object.keys(T).forEach(k=>{let x=0,y=0;D.filter(d=>d.t===k).forEach(d=>{const w=win(d);if(w==='a')x++;if(w==='b')y++});a+=x;b+=y;
+  html+=`<div><span>${T[k].n}</span><b><span style="color:var(--mx)">${x}</span> · <span style="color:var(--my)">${y}</span></b>México · Malasia</div>`});
+ $('#comp').innerHTML=html;
+ const tot=a+b;$('#sa').style.width=a/tot*100+'%';$('#sb').style.width=b/tot*100+'%';
+ count($('#na'),a);count($('#nb'),b);
+ $('#kpis').innerHTML=[['+5.57%','Superávit comercial de Malasia (% PIB)'],['80.1%','Concentración exportadora de México en EE. UU.'],['52.8%','Exportaciones de alta tecnología de Malasia'],[b+' de '+tot,'Indicadores con ventaja para Malasia']].map(k=>`<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');
+}
+document.addEventListener('click',e=>{
+ const t=e.target.closest('.tab');if(t){tab=t.dataset.t;renderTabs();renderTable()}
+ const c=e.target.closest('.chip');if(c){flt=c.dataset.f;document.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===c));renderTable()}
+});
+$('#q').addEventListener('input',e=>{q=e.target.value.toLowerCase().trim();renderTable()});
+$('#tabs').addEventListener('keydown',e=>{const k=Object.keys(T),i=k.indexOf(tab);if(e.key==='ArrowRight'||e.key==='ArrowLeft'){tab=k[(i+(e.key==='ArrowRight'?1:k.length-1))%k.length];renderTabs();renderTable();$('.tab[aria-selected=true]').focus()}});
+$('#theme').onclick=()=>{const r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=dark?'light':'dark'};
+addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+renderTabs();renderTable();scoreboard();
+</script>
+</body>
+</html>
